@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emtenan Mohammed Al-Omrani - CV</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .container {
+            background: white;
+            width: 210mm; /* A4 width */
+            min-height: 297mm; /* A4 height */
+            padding: 15mm;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+            color: #2c3e50;
+            text-align: center;
+            font-weight: 700;
+        }
+        
+        h2 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #3498db;
+            text-align: center;
+            font-weight: 500;
+        }
+        
+        .contact-info {
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .location {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+        
+        .objective {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f9f9f9;
+            border-left: 4px solid #3498db;
+            font-size: 14px;
+            text-align: justify;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+            page-break-inside: avoid;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .experience-item, .education-item {
+            margin-bottom: 20px;
+        }
+        
+        .date {
+            font-weight: 500;
+            color: #3498db;
+            margin-bottom: 5px;
+            font-size: 15px;
+        }
+        
+        .company, .institute {
+            font-weight: 500;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+        
+        .position, .degree {
+            font-style: italic;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+        
+        ul {
+            padding-left: 20px;
+            margin-top: 8px;
+        }
+        
+        li {
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        
+        .two-column {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .column {
+            width: 48%;
+        }
+        
+        .button-container {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .save-btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .save-btn:hover {
+            background: #2980b9;
+        }
+        
+        .print-btn {
+            background: #2c3e50;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .print-btn:hover {
+            background: #1a252f;
+        }
+        
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 0;
+                margin: 0;
+                width: 100%;
+            }
+            
+            .button-container {
+                display: none;
+            }
+        }
+        
+        /* Print-specific styles */
+        @media print {
+            .container {
+                width: 100%;
+                height: auto;
+                margin: 0;
+                padding: 0;
+            }
+            
+            body, html {
+                width: 210mm;
+                height: 297mm;
+            }
+            
+            .two-column {
+                page-break-inside: avoid;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+            }
+            
+            .experience-item, .education-item {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="cv-content">
+        <h1>Emtenan Mohammed Al-Omrani</h1>
+        <h2>Bachelor of Psychology</h2>
+        
+        <div class="contact-info">966599551182</div>
+        <div class="contact-info">Emtenan.emrani@gmail.com</div>
+        <div class="location">Mecca, Saudi Arabia</div>
+        
+        <div class="objective">
+            I aim to develop the work environment I am in, gain experiences, and reach my goal and the status I aspire to, and to play an effective role in a competitive work environment to provide the best.
+        </div>
+        
+        <div class="two-column">
+            <div class="column">
+                <div class="section">
+                    <div class="section-title">Education</div>
+                    
+                    <div class="education-item">
+                        <div class="date">2014-2015</div>
+                        <div class="degree">Bachelor of Psychology</div>
+                    </div>
+                    
+                    <div class="education-item">
+                        <div class="date">2015-2016</div>
+                        <div class="institute">Nawafith Knowledge Institute</div>
+                        <div class="degree">Office Applications and Secretarial</div>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <div class="section-title">Skills</div>
+                    <ul>
+                        <li>Proficient in computer use</li>
+                        <li>Time management and punctuality</li>
+                        <li>Effective communication with others</li>
+                        <li>Adaptation in the work environment</li>
+                        <li>Strategic planning and organization</li>
+                    </ul>
+                </div>
+                
+                <div class="section">
+                    <div class="section-title">Languages</div>
+                    <ul>
+                        <li>Arabic</li>
+                        <li>English (Intermediate)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="column">
+                <div class="section">
+                    <div class="section-title">Work Experience</div>
+                    
+                    <div class="experience-item">
+                        <div class="date">2022 - 2025</div>
+                        <div class="company">Fareed Al-Wasayi</div>
+                        <div class="position">Cashier</div>
+                        <ul>
+                            <li>Customer service and reception</li>
+                            <li>Processing transactions and payments</li>
+                            <li>Administrative and financial tasks</li>
+                            <li>Using POS devices</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="date">2014 - 2015</div>
+                        <div class="company">Umm Al-Qura University, Community Service and Education College</div>
+                        <div class="position">Office Applications and Secretarial</div>
+                        <ul>
+                            <li>Written and electronic tasks</li>
+                            <li>Secretarial and administrative tasks</li>
+                            <li>Database tasks</li>
+                            <li>Document and file activity tasks</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="date">2019 - 2020</div>
+                        <div class="company">Landmark (St. Max)</div>
+                        <div class="position">Salesperson</div>
+                        <ul>
+                            <li>Store preparation and opening</li>
+                            <li>Customer service and transactions</li>
+                            <li>Completing the sales process</li>
+                            <li>After-sales tasks</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="date">February 2006 - August 2006</div>
+                        <div class="company">King Abdulaziz Hospital (Mental Health)</div>
+                        <div class="position">Clinical and Nursing Tasks (Under Supervision)</div>
+                        <ul>
+                            <li>Learning and observation tasks</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="button-container">
+        <button class="save-btn" onclick="generatePDF()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+            </svg>
+            Download PDF
+        </button>
+        
+        <button class="print-btn" onclick="window.print()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M5 1a2 2 0 0 0-2 2v1h10V3a2 2 0 0 0-2-2H5zm6 8H5a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1z"/>
+                <path d="M0 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1v-2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2H2a2 2 0 0 1-2-2V7zm2.5 1a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+            </svg>
+            Print CV
+        </button>
+    </div>
+
+    <script>
+        function generatePDF() {
+            // Get the HTML content to convert
+            const element = document.getElementById('cv-content');
+            
+            // Set options for PDF
+            const options = {
+                margin: [15, 15, 15, 15], // Top, Right, Bottom, Left margins in mm
+                filename: 'Emtenan_Al-Omrani_CV.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2, useCORS: true, letterRendering: true },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+            
+            // Generate and download PDF
+            html2pdf().set(options).from(element).save();
+        }
+        
+        // Prevent layout issues on mobile devices
+        window.addEventListener('resize', function() {
+            if (window.innerWidth < 768) {
+                document.body.style.padding = '10px';
+            } else {
+                document.body.style.padding = '20px';
+            }
+        });
+    </script>
+</body>
+</html>
+
