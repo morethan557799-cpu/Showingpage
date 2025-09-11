@@ -1,127 +1,275 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar" dir="rtl">
 <head>
-    <title>Hydro Quantum V2.2 System Diagram</title>
+    <meta charset="UTF-8">
+    <title>رسم تخطيطي هندسي لنظام Hydro Quantum V2.2</title>
     <style>
-        .blue-dashed { stroke: blue; stroke-dasharray: 5,5; stroke-width: 2; fill: none; }
-        .red-solid { stroke: red; stroke-width: 2; fill: none; }
-        .blue-solid { stroke: blue; stroke-width: 2; fill: none; }
-        .gray-thin { stroke: gray; stroke-width: 1; fill: none; }
-        .component { fill: #f0f0f0; stroke: #333; stroke-width: 1; }
-        .text { font-family: Arial; font-size: 10px; }
-        .arrow { marker-end: url(#arrowhead); }
-        .arrow-red { marker-end: url(#arrowhead-red); }
-        .arrow-blue { marker-end: url(#arrowhead-blue); }
-        .arrow-gray { marker-end: url(#arrowhead-gray); }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        .diagram {
+            overflow: auto;
+        }
+        .component {
+            stroke: #333;
+            stroke-width: 1.5;
+        }
+        .air-path {
+            stroke: #3498db;
+            stroke-dasharray: 5,5;
+            stroke-width: 2;
+            fill: none;
+            marker-end: url(#airArrow);
+        }
+        .thermal-path {
+            stroke: #e74c3c;
+            stroke-width: 2;
+            fill: none;
+            marker-end: url(#thermalArrow);
+        }
+        .water-path {
+            stroke: #2980b9;
+            stroke-width: 2;
+            fill: none;
+            marker-end: url(#waterArrow);
+        }
+        .control-path {
+            stroke: #7f8c8d;
+            stroke-width: 1.5;
+            fill: none;
+            marker-end: url(#controlArrow);
+        }
+        .label {
+            font-size: 10px;
+            text-anchor: middle;
+            font-weight: bold;
+        }
+        .legend {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .legend-item {
+            display: inline-block;
+            margin: 0 15px;
+        }
+        .color-box {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            margin-left: 5px;
+            vertical-align: middle;
+        }
     </style>
 </head>
 <body>
-    <svg width="800" height="600" viewBox="0 0 800 600">
-        <!-- تعريفات الأسهم -->
-        <defs>
-            <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-                <polygon points="0 0, 10 3.5, 0 7" fill="blue"/>
-            </marker>
-            <marker id="arrowhead-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-                <polygon points="0 0, 10 3.5, 0 7" fill="red"/>
-            </marker>
-            <marker id="arrowhead-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-                <polygon points="0 0, 10 3.5, 0 7" fill="blue"/>
-            </marker>
-            <marker id="arrowhead-gray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-                <polygon points="0 0, 10 3.5, 0 7" fill="gray"/>
-            </marker>
-        </defs>
+    <div class="container">
+        <h1>رسم تخطيطي هندسي لنظام Hydro Quantum V2.2</h1>
+        
+        <div class="diagram">
+            <svg width="950" height="700" viewBox="0 0 1000 750">
+                <defs>
+                    <marker id="airArrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#3498db"/>
+                    </marker>
+                    <marker id="thermalArrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#e74c3c"/>
+                    </marker>
+                    <marker id="waterArrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#2980b9"/>
+                    </marker>
+                    <marker id="controlArrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#7f8c8d"/>
+                    </marker>
+                </defs>
 
-        <!-- المكونات الأساسية -->
-        <!-- فتحات السحب (10) -->
-        <rect x="50" y="100" width="80" height="40" class="component"/>
-        <text x="60" y="125" class="text">فتحات السحب (10)</text>
-        
-        <!-- محولات الاهتزاز فوق الصوتية (12) -->
-        <circle cx="90" y="80" r="8" class="component"/>
-        <text x="70" y="75" class="text">محولات اهتزاز (12)</text>
-        
-        <!-- نظام الفلترة الأولي (14) -->
-        <rect x="150" y="95" width="60" height="50" class="component"/>
-        <text x="155" y="120" class="text">فلتر أولي (14)</text>
-        
-        <!-- مراوح متغيرة السرعة (16) -->
-        <circle cx="230" y="120" r="15" class="component"/>
-        <text x="215" y="140" class="text">مروحة (16)</text>
-        
-        <!-- قلب الامتزاز (20) -->
-        <rect x="280" y="50" width="100" height="140" class="component"/>
-        <text x="295" y="70" class="text">قلب الامتزاز (20)</text>
-        
-        <!-- المادة الماصة MOF-303 (22) -->
-        <rect x="290" y="80" width="80" height="80" fill="#e0e0ff" stroke="#333" stroke-width="1"/>
-        <text x="295" y="100" class="text">MOF-303 (22)</text>
-        
-        <!-- نظام الإدارة الحرارية (30) -->
-        <rect x="280" y="210" width="100" height="40" class="component"/>
-        <text x="285" y="235" class="text">الإدارة الحرارية (30)</text>
-        
-        <!-- الأنابيب الحرارية (32) -->
-        <path d="M330 190 L330 170" stroke="red" stroke-width="2"/>
-        <text x="335" y="180" class="text">أنابيب حرارية (32)</text>
-        
-        <!-- نظام التكثيف الهجين (40) -->
-        <rect x="420" y="50" width="100" height="140" class="component"/>
-        <text x="435" y="70" class="text">التكثيف الهجين (40)</text>
-        
-        <!-- سطح التبريد الإشعاعي السلبي PDRC (42) -->
-        <rect x="430" y="80" width="80" height="30" fill="#f0f0f0" stroke="#333" stroke-width="1"/>
-        <text x="435" y="100" class="text">PDRC (42)</text>
-        
-        <!-- وحدة التبريد النشطة (44) -->
-        <rect x="430" y="120" width="80" height="30" fill="#f0f0f0" stroke="#333" stroke-width="1"/>
-        <text x="435" y="140" class="text">ضاغط (44)</text>
-        
-        <!-- سطح التجميع (46) -->
-        <rect x="430" y="160" width="80" height="20" fill="#e0e0e0" stroke="#333" stroke-width="1"/>
-        <text x="435" y="175" class="text">تجميع الماء (46)</text>
-        
-        <!-- وحدة المعالجة والتخزين (60) -->
-        <rect x="550" y="50" width="100" height="140" class="component"/>
-        <text x="555" y="70" class="text">المعالجة والتخزين (60)</text>
-        
-        <!-- وحدة UV-C LED (62) -->
-        <rect x="560" y="80" width="80" height="30" fill="#f0f0f0" stroke="#333" stroke-width="1"/>
-        <text x="565" y="100" class="text">UV-C (62)</text>
-        
-        <!-- الخزان (64) -->
-        <rect x="560" y="120" width="80" height="60" fill="#e0e0e0" stroke="#333" stroke-width="1"/>
-        <text x="565" y="150" class="text">خزان (64)</text>
-        
-        <!-- وحدة التحكم بالذكاء الاصطناعي (50) -->
-        <rect x="350" y="300" width="120" height="60" class="component"/>
-        <text x="355" y="325" class="text">وحدة التحكم بالذكاء الاصطناعي (50)</text>
-        
-        <!-- شبكة المستشعرات (52) -->
-        <circle cx="200" y="300" r="20" class="component"/>
-        <text x="185" y="305" class="text">مستشعرات (52)</text>
+                <!-- الهيكل الخارجي -->
+                <rect x="50" y="50" width="900" height="650" rx="10" ry="10" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="2"/>
+                
+                <!-- عنوان النظام -->
+                <text x="500" y="30" font-size="16" font-weight="bold" text-anchor="middle">نظام Hydro Quantum V2.2 لاستخراج المياه من الهواء</text>
 
-        <!-- المسارات -->
-        <!-- مسار الهواء والرطوبة (أسهم زرقاء متقطعة) -->
-        <path d="M130 120 L200 120 L230 120 L280 120" class="blue-dashed arrow"/>
-        <path d="M380 120 L420 120" class="blue-dashed arrow"/>
-        <path d="M520 120 L550 120" class="blue-dashed"/>
-        
-        <!-- المسار الحراري (أسهم حمراء) -->
-        <path d="M330 250 L330 190" class="red-solid arrow-red"/>
-        
-        <!-- مسار الماء (أسهم زرقاء متصلة) -->
-        <path d="M380 150 L420 150" class="blue-solid arrow-blue"/>
-        <path d="M520 150 L550 150" class="blue-solid arrow-blue"/>
-        <path d="M600 150 L650 150 L650 200 L600 200" class="blue-solid arrow-blue"/>
-        
-        <!-- مسار التحكم والبيانات (أسهم رمادية رفيعة) -->
-        <path d="M350 300 L300 300 L250 250 L230 135" class="gray-thin arrow-gray"/>
-        <path d="M410 300 L450 300 L500 250 L470 190" class="gray-thin arrow-gray"/>
-        <path d="M410 300 L450 300 L500 200 L470 160" class="gray-thin arrow-gray"/>
-        <path d="M350 300 L300 300 L200 300" class="gray-thin arrow-gray"/>
-        <path d="M350 360 L350 400 L90 140" class="gray-thin arrow-gray"/>
-    </svg>
+                <!-- 1. نظام سحب الهواء والفلترة -->
+                <rect x="100" y="100" width="250" height="150" rx="5" ry="5" fill="#fff" stroke="#34495e" stroke-width="2"/>
+                <text x="225" y="90" font-size="12" font-weight="bold" text-anchor="middle">نظام سحب الهواء والفلترة</text>
+                
+                <!-- فتحات السحب (10) -->
+                <circle cx="120" cy="130" r="15" class="component" fill="#e74c3c"/>
+                <text x="120" y="155" class="label">فتحات السحب (10)</text>
+                
+                <!-- محولات الاهتزاز فوق الصوتية (12) -->
+                <rect x="160" cy="130" width="20" height="20" class="component" fill="#9b59b6"/>
+                <text x="170" y="155" class="label">محولات اهتزاز (12)</text>
+                
+                <!-- نظام الفلترة الأولي (14) -->
+                <rect x="200" cy="120" width="40" height="40" class="component" fill="#1abc9c"/>
+                <text x="220" y="170" class="label">فلتر أولي (14)</text>
+                
+                <!-- مراوح متغيرة السرعة (16) -->
+                <circle cx="270" cy="130" r="20" class="component" fill="#3498db"/>
+                <text x="270" y="155" class="label">مروحة (16)</text>
+                
+                <!-- 2. قلب الامتزاز (20) -->
+                <rect x="400" y="100" width="200" height="200" rx="5" ry="5" fill="#fff" stroke="#34495e" stroke-width="2"/>
+                <text x="500" y="90" font-size="12" font-weight="bold" text-anchor="middle">قلب الامتزاز</text>
+                
+                <!-- المادة الماصة MOF-303 (22) -->
+                <circle cx="500" cy="200" r="70" class="component" fill="#f1c40f" opacity="0.7"/>
+                <text x="500" y="200" class="label">MOF-303 (22)</text>
+                
+                <!-- 3. نظام الإدارة الحرارية (30) -->
+                <rect x="650" y="100" width="250" height="100" rx="5" ry="5" fill="#fff" stroke="#34495e" stroke-width="2"/>
+                <text x="775" y="90" font-size="12" font-weight="bold" text-anchor="middle">نظام الإدارة الحرارية</text>
+                
+                <!-- الأنابيب الحرارية (32) -->
+                <rect x="700" cy="130" width="100" height="40" class="component" fill="#e67e22"/>
+                <text x="750" y="180" class="label">أنابيب حرارية (32)</text>
+                
+                <!-- 4. نظام التكثيف الهجين (40) -->
+                <rect x="400" y="350" width="200" height="150" rx="5" ry="5" fill="#fff" stroke="#34495e" stroke-width="2"/>
+                <text x="500" y="340" font-size="12" font-weight="bold" text-anchor="middle">نظام التكثيف الهجين</text>
+                
+                <!-- سطح التبريد الإشعاعي السلبي PDRC (42) -->
+                <rect x="430" cy="380" width="60" height="60" class="component" fill="#3498db"/>
+                <text x="460" y="450" class="label">PDRC (42)</text>
+                
+                <!-- وحدة التبريد النشطة (44) -->
+                <rect x="510" cy="380" width="60" height="60" class="component" fill="#e74c3c"/>
+                <text x="540" y="450" class="label">ضاغط (44)</text>
+                
+                <!-- سطح التجميع (46) -->
+                <rect x="450" cy="470" width="100" height="20" class="component" fill="#2ecc71"/>
+                <text x="500" y="495" class="label">تجميع الماء (46)</text>
+                
+                <!-- 5. وحدة المعالجة والتخزين (60) -->
+                <rect x="650" y="350" width="250" height="150" rx="5" ry="5" fill="#fff" stroke="#34495e" stroke-width="2"/>
+                <text x="775" y="340" font-size="12" font-weight="bold" text-anchor="middle">وحدة المعالجة والتخزين</text>
+                
+                <!-- وحدة UV-C LED (62) -->
+                <rect x="680" cy="380" width="40" height="40" class="component" fill="#9b59b6"/>
+                <text x="700" y="425" class="label">UV-C (62)</text>
+                
+                <!-- الخزان (64) -->
+                <rect x="750" cy="370" width="80" height="80" class="component" fill="#3498db"/>
+                <text x="790" y="455" class="label">خزان (64)</text>
+                
+                <!-- 6. وحدة التحكم بالذكاء الاصطناعي (50) -->
+                <rect x="100" y="350" width="250" height="100" rx="5" ry="5" fill="#fff" stroke="#34495e" stroke-width="2"/>
+                <text x="225" y="340" font-size="12" font-weight="bold" text-anchor="middle">وحدة التحكم بالذكاء الاصطناعي</text>
+                
+                <!-- 7. شبكة المستشعرات (52) -->
+                <circle cx="225" cy="400" r="30" class="component" fill="#7f8c8d"/>
+                <text x="225" y="400" class="label">مستشعرات (52)</text>
+                
+                <!-- 8. نظام الطاقة -->
+                <rect x="100" y="500" width="250" height="100" rx="5" ry="5" fill="#fff" stroke="#34495e" stroke-width="2"/>
+                <text x="225" y="490" font-size="12" font-weight="bold" text-anchor="middle">نظام الطاقة</text>
+                
+                <!-- الألواح الشمسية -->
+                <rect x="130" cy="520" width="60" height="40" class="component" fill="#f1c40f"/>
+                <text x="160" y="565" class="label">ألواح شمسية</text>
+                
+                <!-- البطاريات -->
+                <rect x="210" cy="520" width="60" height="40" class="component" fill="#34495e"/>
+                <text x="240" y="565" class="label">بطاريات</text>
+                
+                <!-- 9. نظام التنظيف الذاتي -->
+                <rect x="400" y="550" width="200" height="50" rx="5" ry="5" fill="#fff" stroke="#34495e" stroke-width="2"/>
+                <text x="500" y="540" font-size="12" font-weight="bold" text-anchor="middle">نظام التنظيف الذاتي</text>
+                
+                <!-- ضاغط الهواء -->
+                <rect x="430" cy="560" width="30" height="30" class="component" fill="#e67e22"/>
+                <text x="445" y="595" class="label">ضاغط هواء</text>
+                
+                <!-- صمامات النفث -->
+                <rect x="480" cy="560" width="30" height="30" class="component" fill="#9b59b6"/>
+                <text x="495" y="595" class="label">صمامات</text>
+                
+                <!-- محولات كهرضغطية -->
+                <rect x="530" cy="560" width="30" height="30" class="component" fill="#2ecc71"/>
+                <text x="545" y="595" class="label">محولات</text>
+                
+                <!-- 10. نظام الاتصالات -->
+                <rect x="650" y="550" width="250" height="50" rx="5" ry="5" fill="#fff" stroke="#34495e" stroke-width="2"/>
+                <text x="775" y="540" font-size="12" font-weight="bold" text-anchor="middle">نظام الاتصالات</text>
+                
+                <!-- اتصال الأقمار الصناعية -->
+                <circle cx="700" cy="575" r="15" class="component" fill="#3498db"/>
+                <text x="700" y="595" class="label">أقمار صناعية</text>
+                
+                <!-- اتصال LoRaWAN -->
+                <circle cx="750" cy="575" r="15" class="component" fill="#9b59b6"/>
+                <text x="750" y="595" class="label">LoRaWAN</text>
+                
+                <!-- هوائيات -->
+                <path d="M800 560 L800 570 L810 565 L800 560" class="component" fill="#e74c3c"/>
+                <text x="810" y="595" class="label">هوائيات</text>
+
+                <!-- المسارات -->
+                <!-- مسار الهواء والرطوبة (أسهم زرقاء متقطعة) -->
+                <path d="M120 130 C200 130, 300 130, 350 130" class="air-path"/>
+                <path d="M350 130 C370 130, 370 200, 350 200" class="air-path"/>
+                <path d="M600 200 C650 200, 650 130, 700 130" class="air-path"/>
+                <path d="M700 130 C800 130, 800 180, 800 200" class="air-path"/>
+                
+                <!-- المسار الحراري (أسهم حمراء) -->
+                <path d="M700 150 C650 150, 650 200, 600 200" class="thermal-path"/>
+                <path d="M600 200 C550 200, 500 200, 500 200" class="thermal-path"/>
+                
+                <!-- مسار الماء (أسهم زرقاء متصلة) -->
+                <path d="M500 270 C500 300, 500 350, 500 370" class="water-path"/>
+                <path d="M500 370 C500 390, 500 400, 500 420" class="water-path"/>
+                <path d="M500 500 C550 500, 650 500, 700 500" class="water-path"/>
+                <path d="M700 500 C750 500, 780 450, 780 400" class="water-path"/>
+                
+                <!-- مسار التحكم والبيانات (أسهم رمادية) -->
+                <path d="M225 400 C225 350, 225 250, 225 250" class="control-path"/>
+                <path d="M225 250 C300 250, 350 180, 400 180" class="control-path"/>
+                <path d="M225 250 C300 250, 650 180, 700 180" class="control-path"/>
+                <path d="M225 400 C225 450, 225 500, 225 520" class="control-path"/>
+                <path d="M225 400 C300 400, 400 400, 450 400" class="control-path"/>
+                <path d="M225 400 C300 400, 650 400, 700 400" class="control-path"/>
+                <path d="M225 400 C300 400, 500 550, 500 570" class="control-path"/>
+                <path d="M225 400 C300 400, 700 550, 750 570" class="control-path"/>
+            </svg>
+        </div>
+
+        <div class="legend">
+            <h3>مفتاح الرسم التخطيطي</h3>
+            <div class="legend-item">
+                <span class="color-box" style="background-color: #3498db;"></span>
+                <span>مسار الهواء والرطوبة</span>
+            </div>
+            <div class="legend-item">
+                <span class="color-box" style="background-color: #e74c3c;"></span>
+                <span>المسار الحراري</span>
+            </div>
+            <div class="legend-item">
+                <span class="color-box" style="background-color: #2980b9;"></span>
+                <span>مسار الماء</span>
+            </div>
+            <div class="legend-item">
+                <span class="color-box" style="background-color: #7f8c8d;"></span>
+                <span>مسار التحكم والبيانات</span>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
