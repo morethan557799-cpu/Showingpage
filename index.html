@@ -1,162 +1,127 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emtenan Mohammed Omrani - CV</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Hydro Quantum V2.2 System Diagram</title>
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f0f2f5;
-        }
-        /* A4 Page Simulation */
-        .page {
-            width: 21cm;
-            min-height: 29.7cm;
-            padding: 2cm;
-            margin: 1cm auto;
-            border: 1px #D1D5DB solid;
-            background: white;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-        }
-        @media print {
-            body, .page {
-                margin: 0;
-                box-shadow: none;
-                border: none;
-            }
-        }
-        /* Custom heading styles */
-        .section-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #111827;
-            border-bottom: 2px solid #e0e0e0;
-            padding-bottom: 8px;
-            margin-bottom: 16px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
+        .blue-dashed { stroke: blue; stroke-dasharray: 5,5; stroke-width: 2; fill: none; }
+        .red-solid { stroke: red; stroke-width: 2; fill: none; }
+        .blue-solid { stroke: blue; stroke-width: 2; fill: none; }
+        .gray-thin { stroke: gray; stroke-width: 1; fill: none; }
+        .component { fill: #f0f0f0; stroke: #333; stroke-width: 1; }
+        .text { font-family: Arial; font-size: 10px; }
+        .arrow { marker-end: url(#arrowhead); }
+        .arrow-red { marker-end: url(#arrowhead-red); }
+        .arrow-blue { marker-end: url(#arrowhead-blue); }
+        .arrow-gray { marker-end: url(#arrowhead-gray); }
     </style>
 </head>
-<body class="bg-gray-100">
+<body>
+    <svg width="800" height="600" viewBox="0 0 800 600">
+        <!-- تعريفات الأسهم -->
+        <defs>
+            <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                <polygon points="0 0, 10 3.5, 0 7" fill="blue"/>
+            </marker>
+            <marker id="arrowhead-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                <polygon points="0 0, 10 3.5, 0 7" fill="red"/>
+            </marker>
+            <marker id="arrowhead-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                <polygon points="0 0, 10 3.5, 0 7" fill="blue"/>
+            </marker>
+            <marker id="arrowhead-gray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                <polygon points="0 0, 10 3.5, 0 7" fill="gray"/>
+            </marker>
+        </defs>
 
-    <div class="page">
-        <!-- Header Section -->
-        <header class="flex justify-between items-start mb-8">
-            <div>
-                <h1 class="text-4xl font-bold text-gray-800">EMTENAN MOHAMMED OMRANI</h1>
-                <p class="text-xl text-gray-600 mt-1">Bachelor of Science in Psychology</p>
-            </div>
-            <div class="text-right text-sm text-gray-700 space-y-2">
-                <div class="flex items-center justify-end">
-                    <span class="mr-2">+966 59 955 1182</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.28 1.465l-2.135 2.136a1.284 1.284 0 0 0-.21 1.638l4.448 4.448a1.284 1.284 0 0 0 1.638-.21l2.136-2.135a1.465 1.465 0 0 1 1.465.28l2.305 1.799a1.745 1.745 0 0 1 .163 2.61l-1.044 1.044a1.745 1.745 0 0 1-2.433.382c-1.353-.642-2.952-1.85-4.634-3.532S2.15 4.974 1.508 3.62.13 1.185.51.743l1.044-1.044a.25.25 0 0 1 .331 0z"/>
-                    </svg>
-                </div>
-                <div class="flex items-center justify-end">
-                    <span class="mr-2">Emtenan.emrani@gmail.com</span>
-                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
-                        <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/>
-                    </svg>
-                </div>
-                 <div class="flex items-center justify-end">
-                    <span class="mr-2">Makkah, Saudi Arabia</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-                        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
-                    </svg>
-                </div>
-            </div>
-        </header>
-
-        <!-- Professional Summary -->
-        <section class="mb-8 text-center">
-            <p class="text-gray-700 italic">
-                A dedicated and motivated psychology graduate seeking to contribute to a dynamic work environment. Eager to leverage acquired skills and experience to achieve organizational goals while pursuing professional growth in a competitive setting.
-            </p>
-        </section>
+        <!-- المكونات الأساسية -->
+        <!-- فتحات السحب (10) -->
+        <rect x="50" y="100" width="80" height="40" class="component"/>
+        <text x="60" y="125" class="text">فتحات السحب (10)</text>
         
-        <hr class="mb-8">
+        <!-- محولات الاهتزاز فوق الصوتية (12) -->
+        <circle cx="90" y="80" r="8" class="component"/>
+        <text x="70" y="75" class="text">محولات اهتزاز (12)</text>
+        
+        <!-- نظام الفلترة الأولي (14) -->
+        <rect x="150" y="95" width="60" height="50" class="component"/>
+        <text x="155" y="120" class="text">فلتر أولي (14)</text>
+        
+        <!-- مراوح متغيرة السرعة (16) -->
+        <circle cx="230" y="120" r="15" class="component"/>
+        <text x="215" y="140" class="text">مروحة (16)</text>
+        
+        <!-- قلب الامتزاز (20) -->
+        <rect x="280" y="50" width="100" height="140" class="component"/>
+        <text x="295" y="70" class="text">قلب الامتزاز (20)</text>
+        
+        <!-- المادة الماصة MOF-303 (22) -->
+        <rect x="290" y="80" width="80" height="80" fill="#e0e0ff" stroke="#333" stroke-width="1"/>
+        <text x="295" y="100" class="text">MOF-303 (22)</text>
+        
+        <!-- نظام الإدارة الحرارية (30) -->
+        <rect x="280" y="210" width="100" height="40" class="component"/>
+        <text x="285" y="235" class="text">الإدارة الحرارية (30)</text>
+        
+        <!-- الأنابيب الحرارية (32) -->
+        <path d="M330 190 L330 170" stroke="red" stroke-width="2"/>
+        <text x="335" y="180" class="text">أنابيب حرارية (32)</text>
+        
+        <!-- نظام التكثيف الهجين (40) -->
+        <rect x="420" y="50" width="100" height="140" class="component"/>
+        <text x="435" y="70" class="text">التكثيف الهجين (40)</text>
+        
+        <!-- سطح التبريد الإشعاعي السلبي PDRC (42) -->
+        <rect x="430" y="80" width="80" height="30" fill="#f0f0f0" stroke="#333" stroke-width="1"/>
+        <text x="435" y="100" class="text">PDRC (42)</text>
+        
+        <!-- وحدة التبريد النشطة (44) -->
+        <rect x="430" y="120" width="80" height="30" fill="#f0f0f0" stroke="#333" stroke-width="1"/>
+        <text x="435" y="140" class="text">ضاغط (44)</text>
+        
+        <!-- سطح التجميع (46) -->
+        <rect x="430" y="160" width="80" height="20" fill="#e0e0e0" stroke="#333" stroke-width="1"/>
+        <text x="435" y="175" class="text">تجميع الماء (46)</text>
+        
+        <!-- وحدة المعالجة والتخزين (60) -->
+        <rect x="550" y="50" width="100" height="140" class="component"/>
+        <text x="555" y="70" class="text">المعالجة والتخزين (60)</text>
+        
+        <!-- وحدة UV-C LED (62) -->
+        <rect x="560" y="80" width="80" height="30" fill="#f0f0f0" stroke="#333" stroke-width="1"/>
+        <text x="565" y="100" class="text">UV-C (62)</text>
+        
+        <!-- الخزان (64) -->
+        <rect x="560" y="120" width="80" height="60" fill="#e0e0e0" stroke="#333" stroke-width="1"/>
+        <text x="565" y="150" class="text">خزان (64)</text>
+        
+        <!-- وحدة التحكم بالذكاء الاصطناعي (50) -->
+        <rect x="350" y="300" width="120" height="60" class="component"/>
+        <text x="355" y="325" class="text">وحدة التحكم بالذكاء الاصطناعي (50)</text>
+        
+        <!-- شبكة المستشعرات (52) -->
+        <circle cx="200" y="300" r="20" class="component"/>
+        <text x="185" y="305" class="text">مستشعرات (52)</text>
 
-        <!-- Main Content -->
-        <div class="flex flex-row gap-x-12">
-            <!-- Left Column -->
-            <div class="w-2/3">
-                <section>
-                    <h2 class="section-title">Professional Experience</h2>
-                    <div class="space-y-6">
-                        <div>
-                            <h3 class="font-semibold text-lg text-gray-800">Fund Administrator</h3>
-                            <p class="text-md text-gray-600">Farid Wasly Est. | 2022 – 2025</p>
-                            <ul class="list-disc list-inside mt-2 text-gray-700 space-y-1">
-                                <li>Provided comprehensive customer service and managed front-desk operations.</li>
-                                <li>Handled administrative and financial responsibilities.</li>
-                                <li>Operated Point of Sale (POS) systems efficiently.</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold text-lg text-gray-800">Part-time Associate</h3>
-                            <p class="text-md text-gray-600">Landmark Group (Maxi) | 2020 – 2021</p>
-                            <ul class="list-disc list-inside mt-2 text-gray-700 space-y-1">
-                                <li>Managed cashier duties and processed transactions.</li>
-                                <li>Delivered excellent customer service and drove sales.</li>
-                                <li>Oversaw product merchandising and store arrangement.</li>
-                                <li>Provided post-sales support to ensure customer satisfaction.</li>
-                            </ul>
-                        </div>
-                         <div>
-                            <h3 class="font-semibold text-lg text-gray-800">Intern (Mental Health Department)</h3>
-                            <p class="text-md text-gray-600">King Abdulaziz Medical City | Feb 2018 – Aug 2018</p>
-                            <ul class="list-disc list-inside mt-2 text-gray-700 space-y-1">
-                                <li>Assisted with psychological and educational case management under direct supervision.</li>
-                                <li>Engaged in continuous learning and professional development activities.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-            </div>
-
-            <!-- Right Column -->
-            <div class="w-1/3">
-                <section class="mb-8">
-                    <h2 class="section-title">Education</h2>
-                     <div class="space-y-4">
-                        <div>
-                            <h3 class="font-semibold text-md text-gray-800">Diploma in Computer Applications & Secretarial Skills</h3>
-                            <p class="text-sm text-gray-600">Umm Al-Qura University | 2015 – 2016</p>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold text-md text-gray-800">Bachelor of Science in Psychology</h3>
-                             <p class="text-sm text-gray-600">2014 – 2015</p>
-                        </div>
-                    </div>
-                </section>
-                
-                <section class="mb-8">
-                    <h2 class="section-title">Core Competencies</h2>
-                    <ul class="list-none text-gray-700 space-y-2">
-                        <li>▪ Computer Proficiency</li>
-                        <li>▪ Time Management & Punctuality</li>
-                        <li>▪ Interpersonal Communication</li>
-                        <li>▪ Adaptability & Flexibility</li>
-                        <li>▪ Strategic Planning & Organization</li>
-                    </ul>
-                </section>
-                
-                 <section>
-                    <h2 class="section-title">Languages</h2>
-                    <ul class="list-none text-gray-700 space-y-2">
-                        <li>▪ Arabic (Native)</li>
-                        <li>▪ English (Intermediate)</li>
-                    </ul>
-                </section>
-            </div>
-        </div>
-    </div>
-
+        <!-- المسارات -->
+        <!-- مسار الهواء والرطوبة (أسهم زرقاء متقطعة) -->
+        <path d="M130 120 L200 120 L230 120 L280 120" class="blue-dashed arrow"/>
+        <path d="M380 120 L420 120" class="blue-dashed arrow"/>
+        <path d="M520 120 L550 120" class="blue-dashed"/>
+        
+        <!-- المسار الحراري (أسهم حمراء) -->
+        <path d="M330 250 L330 190" class="red-solid arrow-red"/>
+        
+        <!-- مسار الماء (أسهم زرقاء متصلة) -->
+        <path d="M380 150 L420 150" class="blue-solid arrow-blue"/>
+        <path d="M520 150 L550 150" class="blue-solid arrow-blue"/>
+        <path d="M600 150 L650 150 L650 200 L600 200" class="blue-solid arrow-blue"/>
+        
+        <!-- مسار التحكم والبيانات (أسهم رمادية رفيعة) -->
+        <path d="M350 300 L300 300 L250 250 L230 135" class="gray-thin arrow-gray"/>
+        <path d="M410 300 L450 300 L500 250 L470 190" class="gray-thin arrow-gray"/>
+        <path d="M410 300 L450 300 L500 200 L470 160" class="gray-thin arrow-gray"/>
+        <path d="M350 300 L300 300 L200 300" class="gray-thin arrow-gray"/>
+        <path d="M350 360 L350 400 L90 140" class="gray-thin arrow-gray"/>
+    </svg>
 </body>
 </html>
-
