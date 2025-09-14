@@ -3,186 +3,362 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>رسم تخطيطي لوحدة الامتزاز</title>
+    <title>سيرة ذاتية - محمد حسين علي زيد</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --light-gray-color: #f8f9fa;
+            --text-color: #333;
+            --sidebar-text-color: #ecf0f1;
+            --white-color: #ffffff;
+        }
+
         body {
-            background-color: white;
+            font-family: 'Tajawal', sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            background-color: #e9ecef;
             display: flex;
             justify-content: center;
-            font-family: Arial, sans-serif;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+
+        .page {
+            background: var(--white-color);
+            width: 21cm;
+            min-height: 29.7cm;
+            margin: 1.5cm auto;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            display: flex;
+        }
+
+        .sidebar {
+            background-color: var(--primary-color);
+            color: var(--sidebar-text-color);
+            width: 35%;
+            padding: 30px 20px;
+            box-sizing: border-box;
+        }
+
+        .main-content {
+            width: 65%;
+            padding: 30px;
+            box-sizing: border-box;
         }
         
-        .container {
-            width: 100%;
-            max-width: 900px;
-            position: relative;
+        .header {
+            text-align: right;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary-color);
+        }
+
+        .header h2 {
+            margin: 5px 0 0;
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--secondary-color);
+        }
+
+        .sidebar-section {
+            margin-bottom: 25px;
+        }
+
+        .sidebar-title {
+            font-size: 16px;
+            font-weight: 700;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sidebar-title svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--sidebar-text-color);
         }
         
-        svg {
-            width: 100%;
-            height: auto;
-            border: 1px solid #ccc;
-            background-color: white;
+        .contact-list, .skills-list, .languages-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
         }
         
-        /* أنماط الأسهم والخطوط */
-        .air-path {
-            stroke: blue;
-            stroke-dasharray: 5,5;
-            stroke-width: 1.5;
-            fill: none;
-            marker-end: url(#airArrow);
+        .contact-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+            font-size: 14px;
         }
         
-        .water-path {
-            stroke: blue;
-            stroke-width: 2;
-            fill: none;
-            marker-end: url(#waterArrow);
+        .contact-list svg {
+            width: 16px;
+            height: 16px;
+            fill: var(--sidebar-text-color);
+            flex-shrink: 0;
         }
         
-        .thermal-path {
-            stroke: red;
-            stroke-width: 2;
-            fill: none;
-            marker-end: url(#thermalArrow);
+        .skills-list li {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 6px 12px;
+            border-radius: 5px;
+            margin-bottom: 8px;
+            font-size: 13px;
         }
         
-        .control-path {
-            stroke: gray;
-            stroke-width: 1;
-            fill: none;
-            marker-end: url(#controlArrow);
+        .languages-list li {
+            font-size: 14px;
+            margin-bottom: 8px;
         }
         
-        /* أنماط المكونات */
-        .component {
-            stroke: black;
-            stroke-width: 1.5;
-            fill: white;
+        .main-section {
+            margin-bottom: 30px;
+        }
+
+        .main-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         
-        .vibration {
-            animation: vibrate 0.3s infinite;
+        .main-title svg {
+            width: 22px;
+            height: 22px;
+            fill: var(--secondary-color);
         }
         
-        @keyframes vibrate {
-            0% { transform: translateX(0); }
-            25% { transform: translateX(1px); }
-            50% { transform: translateX(0); }
-            75% { transform: translateX(-1px); }
-            100% { transform: translateX(0); }
+        #profile-summary {
+            line-height: 1.7;
+            font-size: 15px;
         }
         
-        .number {
-            font-size: 12px;
-            font-weight: bold;
-            text-anchor: middle;
-            dominant-baseline: central;
+        .experience-item {
+            margin-bottom: 25px;
+        }
+        
+        .experience-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .item-header {
+            margin-bottom: 8px;
+        }
+        
+        .item-header h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin: 0;
+            display: inline;
+        }
+        
+        .item-header span {
+            font-size: 14px;
+            color: #555;
+            margin-right: 5px;
+        }
+        
+        .item-date {
+            font-size: 13px;
+            color: #777;
+            margin-bottom: 8px;
+            display: block;
+        }
+        
+        .item-description {
+             font-size: 14px;
+             color: #555;
+             font-style: italic;
+        }
+        
+        .education-item h3 {
+             font-size: 16px;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin: 0 0 5px 0;
+        }
+        .education-item p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        @media print {
+            body {
+                background-color: var(--white-color);
+            }
+            .page {
+                margin: 0;
+                padding: 0;
+                box-shadow: none;
+                width: 100%;
+                min-height: 0;
+            }
+            .sidebar {
+                background-color: #f2f2f2 !important;
+                color: #333 !important;
+                -webkit-print-color-adjust: exact; 
+                print-color-adjust: exact;
+            }
+            .sidebar-title, .sidebar-title svg, .contact-list svg {
+                color: #333 !important;
+                fill: #333 !important;
+            }
+            .skills-list li {
+                background-color: #e0e0e0 !important;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <svg viewBox="0 0 900 700" xmlns="http://www.w3.org/2000/svg">
-            <!-- تعريف رؤوس الأسهم -->
-            <defs>
-                <marker id="airArrow" viewBox="0 0 10 10" refX="9" refY="5"
-                        markerWidth="6" markerHeight="6" orient="auto">
-                    <path d="M 0 0 L 10 5 L 0 10 z" fill="blue"/>
-                </marker>
-                
-                <marker id="waterArrow" viewBox="0 0 10 10" refX="9" refY="5"
-                        markerWidth="6" markerHeight="6" orient="auto">
-                    <path d="M 0 0 L 10 5 L 0 10 z" fill="blue"/>
-                </marker>
-                
-                <marker id="thermalArrow" viewBox="0 0 10 10" refX="9" refY="5"
-                        markerWidth="6" markerHeight="6" orient="auto">
-                    <path d="M 0 0 L 10 5 L 0 10 z" fill="red"/>
-                </marker>
-                
-                <marker id="controlArrow" viewBox="0 0 10 10" refX="9" refY="5"
-                        markerWidth="6" markerHeight="6" orient="auto">
-                    <path d="M 0 0 L 10 5 L 0 10 z" fill="gray"/>
-                </marker>
-            </defs>
+
+    <div class="page">
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,12C14.21,12 16,10.21 16,8C16,5.79 14.21,4 12,4C9.79,4 8,5.79 8,8C8,10.21 9.79,12 12,12M12,14C9.33,14 4,15.33 4,18V20H20V18C20,15.33 14.67,14 12,14Z"/></svg>
+                    معلومات التواصل
+                </h3>
+                <ul class="contact-list">
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/></svg>
+                        <span>0559840494</span>
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"/></svg>
+                        <span>mhhjjgu345@gmail.com</span>
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z"/></svg>
+                        <span>الرياض، المملكة العربية السعودية</span>
+                    </li>
+                </ul>
+            </div>
             
-            <!-- المكونات الأساسية -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">
+                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,20H17V11H7V20H5V9L12,5L19,9V20M8,12H16V14H8V12M8,15H16V17H8V15M16,18V20H8V18H16Z"/></svg>
+                    المهارات
+                </h3>
+                <ul class="skills-list">
+                    <li>الإدارة والإشراف</li>
+                    <li>حل المشاكل</li>
+                    <li>العمل تحت الضغط</li>
+                    <li>إدارة الوقت</li>
+                    <li>العمل بروح الفريق الواحد</li>
+                    <li>مهارات الاتصال والتنظيم</li>
+                    <li>مايكروسوفت أوفيس</li>
+                    <li>إتقان الكمبيوتر</li>
+                </ul>
+            </div>
             
-            <!-- فتحات السحب (10) مع اهتزازات التنظيف -->
-            <g class="vibration">
-                <rect x="50" y="300" width="80" height="40" class="component"/>
-                <text x="90" y="320" class="number">10</text>
-                <path d="M40,310 Q30,300 20,310 T0,310" stroke="black" fill="none"/>
-                <path d="M40,330 Q30,340 20,330 T0,330" stroke="black" fill="none"/>
-            </g>
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.87,15.07L10.33,12.56L10.36,12.53C12.1,10.59 13.34,8.36 14.07,6H17V4H10V2H8V4H1V6H12.17C11.5,7.92 10.44,9.75 9,11.35C8.07,10.32 7.3,9.19 6.69,8H4.69C5.42,9.63 6.42,11.17 7.67,12.56L2.58,17.58L4,19L9,14L12.11,17.11L12.87,15.07M18.5,10H16.5L12,22H14L15.12,19H19.87L21,22H23L18.5,10M15.88,17L17.5,12.67L19.12,17H15.88Z"/></svg>
+                    اللغات
+                </h3>
+                <ul class="languages-list">
+                    <li><strong>العربية:</strong> اللغة الأم</li>
+                    <li><strong>الإنجليزية:</strong> جيد</li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <h1>محمد حسين علي زيد</h1>
+                <h2>مشرف معدات وعمال | خبرة 12+ عام</h2>
+            </header>
             
-            <!-- نظام الفلترة الأولي (14) -->
-            <rect x="180" y="290" width="100" height="60" class="component"/>
-            <text x="230" y="320" class="number">14</text>
-            <line x1="230" y1="290" x2="210" y2="270" stroke="black"/>
-            <line x1="230" y1="290" x2="250" y2="270" stroke="black"/>
-            <line x1="230" y1="350" x2="210" y2="370" stroke="black"/>
-            <line x1="230" y1="350" x2="250" y2="370" stroke="black"/>
+            <section class="main-section">
+                <h2 class="main-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/></svg>
+                    الهدف الوظيفي
+                </h2>
+                <p id="profile-summary">
+                    تطوير بيئة العمل وتحفيز نفسي دائمًا لبذل المزيد من العطاء والإنتاج، ومساعدة الآخرين. أرغب في تعلم الكثير من المهارات الجديدة وإتقانها للمساهمة في تحقيق أهداف المؤسسة.
+                </p>
+            </section>
             
-            <!-- مراوح متغيرة السرعة (16) -->
-            <circle cx="350" cy="320" r="30" class="component"/>
-            <text x="350" y="320" class="number">16</text>
-            <path d="M350,290 Q370,320 350,350 T330,320" stroke="black" fill="none"/>
-            <path d="M350,290 Q330,320 350,350 T370,320" stroke="black" fill="none"/>
+            <section class="main-section">
+                <h2 class="main-title">
+                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,6H16V4L14,2H10L8,4V6H4A2,2 0 0,0 2,8V19A2,2 0 0,0 4,21H20A2,2 0 0,0 22,19V8A2,2 0 0,0 20,6M10,4H14V6H10V4M12,15A2.5,2.5 0 0,1 9.5,12.5A2.5,2.5 0 0,1 12,10A2.5,2.5 0 0,1 14.5,12.5A2.5,2.5 0 0,1 12,15Z"/></svg>
+                    الخبرة العملية
+                </h2>
+                <div class="experience-item">
+                    <div class="item-header">
+                        <h3>مشرف معدات وعمال</h3>
+                        <span>- شركة الكفاءات</span>
+                    </div>
+                    <span class="item-date">أبريل 2021 - فبراير 2025</span>
+                    <p class="item-description">المشروع: توربينات الرياح للطاقة، البدع، تبوك.</p>
+                </div>
+                <div class="experience-item">
+                     <div class="item-header">
+                        <h3>مراقب معدات ثقيلة</h3>
+                        <span>- شركة بصمة إعمار للمقاولات العامة</span>
+                    </div>
+                </div>
+                <div class="experience-item">
+                    <div class="item-header">
+                       <h3>مراقب معدات ثقيلة</h3>
+                       <span>- سعيد سعد الصاعدي للمقاولات</span>
+                   </div>
+               </div>
+                <div class="experience-item">
+                    <div class="item-header">
+                       <h3>مراقب معدات ثقيلة</h3>
+                       <span>- مؤسسة معجب سعيد الزهراني للمقاولات العامة</span>
+                   </div>
+               </div>
+                <div class="experience-item">
+                    <div class="item-header">
+                       <h3>مراقب معدات ثقيلة</h3>
+                       <span>- مؤسسة على ناصر الاسمري للمقاولات</span>
+                   </div>
+               </div>
+                <div class="experience-item">
+                    <div class="item-header">
+                       <h3>خدمات وتوسعات الطرق</h3>
+                       <span>- بلدية عنيزة</span>
+                   </div>
+               </div>
+            </section>
             
-            <!-- قلب الامتزاز (20) مع المادة الماصة MOF-303 (22) -->
-            <rect x="450" y="250" width="120" height="140" class="component"/>
-            <text x="510" y="290" class="number">20</text>
-            <circle cx="490" cy="320" r="15" stroke="black" fill="white"/>
-            <circle cx="510" cy="320" r="15" stroke="black" fill="white"/>
-            <circle cx="530" cy="320" r="15" stroke="black" fill="white"/>
-            <text x="510" y="350" class="number">22</text>
-            
-            <!-- نظام الإدارة الحرارية (30) مع الأنابيب الحرارية (32) -->
-            <rect x="650" y="280" width="80" height="80" class="component"/>
-            <text x="690" y="320" class="number">30</text>
-            <circle cx="670" cy="320" r="5" fill="red"/>
-            <circle cx="690" cy="320" r="5" fill="red"/>
-            <circle cx="710" cy="320" r="5" fill="red"/>
-            
-            <!-- نظام التكثيف الهجين (40) مع PDRC (42) والضاغط (44) وسطح التجميع (46) -->
-            <rect x="450" y="450" width="200" height="100" class="component"/>
-            <text x="550" y="470" class="number">40</text>
-            
-            <!-- PDRC (42) -->
-            <rect x="460" y="480" width="60" height="30" stroke="black" fill="white"/>
-            <text x="490" y="495" class="number">42</text>
-            
-            <!-- الضاغط (44) -->
-            <circle cx="550" cy="495" r="20" stroke="black" fill="white"/>
-            <text x="550" y="495" class="number">44</text>
-            
-            <!-- سطح التجميع (46) -->
-            <rect x="620" y="480" width="20" height="30" stroke="black" fill="white"/>
-            <text x="630" y="495" class="number">46</text>
-            
-            <!-- وحدة التحكم بالذكاء الاصطناعي (50) -->
-            <rect x="250" y="500" width="100" height="60" class="component"/>
-            <text x="300" y="530" class="number">50</text>
-            <circle cx="270" cy="510" r="3" fill="black"/>
-            <circle cx="270" cy="530" r="3" fill="black"/>
-            <circle cx="270" cy="550" r="3" fill="black"/>
-            
-            <!-- شبكة المستشعرات (52) -->
-            <circle cx="400" cy="220" r="8" stroke="black" fill="white"/>
-            <circle cx="500" cy="220" r="8" stroke="black" fill="white"/>
-            <circle cx="600" cy="220" r="8" stroke="black" fill="white"/>
-            <circle cx="400" cy="500" r="8" stroke="black" fill="white"/>
-            <circle cx="500" cy="500" r="8" stroke="black" fill="white"/>
-            <circle cx="600" cy="500" r="8" stroke="black" fill="white"/>
-            
-            <!-- وحدة المعالجة والتخزين (60) مع UV-C LED (62) والخزان (64) -->
-            <rect x="250" y="600" width="120" height="60" class="component"/>
-            <text x="310" y="615" class="number">60</text>
-            
-            <!-- UV-C LED (62) -->
-            <rect x="260" y="630" width="30" height="20" stroke="black"
+            <section class="main-section">
+                <h2 class="main-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18L12,21L19,17.18V13.18L12,17L5,13.18Z"/></svg>
+                    المؤهل العلمي
+                </h2>
+                <div class="education-item">
+                    <h3>شهادة الثانوية العامة</h3>
+                    <p>العلوم والتكنولوجيا، صنعاء</p>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>
+
