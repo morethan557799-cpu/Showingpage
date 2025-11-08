@@ -1,223 +1,138 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV: Nahedh Alshammari</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif; /* Clear, professional font */
-            line-height: 1.6;
-            background-color: #f9f9f9;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            direction: ltr; /* Left-to-Right */
-        }
-        .container {
-            width: 90%;
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 30px;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            text-align: left; /* Align text to the left */
-        }
-        h1, h3 {
-            color: #2c3e50; /* Dark blue for headings */
-            border-bottom: 2px solid #3498db; /* Blue accent line */
-            padding-bottom: 10px;
-            margin-top: 20px;
-            margin-bottom: 15px;
-        }
-        h1 {
-            font-size: 2.2em;
-            text-align: center;
-            margin-bottom: 10px;
-            border-bottom: none;
-        }
-        .contact-info {
-            text-align: center;
-            font-size: 1.1em;
-            color: #555;
-            margin-bottom: 25px;
-        }
-        h3 {
-            font-size: 1.6em;
-        }
-        ul {
-            list-style-type: none; /* Remove default bullets */
-            padding-left: 20px; /* Add left padding */
-            margin-top: 0;
-        }
-        ul li {
-            position: relative;
-            padding-left: 30px; /* Space for custom bullet */
-            margin-bottom: 10px;
-        }
-        ul li::before {
-            content: '•'; /* Custom bullet */
-            color: #3498db; /* Bullet color */
-            font-size: 1.4em;
-            position: absolute;
-            left: 0;
-            top: 0;
-            line-height: 1;
-        }
-        .job-title {
-            font-size: 1.2em;
-            font-weight: bold;
-            color: #000;
-        }
-        .company-info {
-            font-size: 1.1em;
-            color: #7f8c8d;
-            margin-bottom: 15px;
-        }
-        .skills-section {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        .skills-category {
-            padding: 15px;
-            background-color: #fdfdfd;
-            border-radius: 5px;
-            border: 1px solid #eee;
-        }
-        .skills-category strong {
-            font-size: 1.1em;
-            color: #2980b9;
-            display: block;
-            margin-bottom: 10px;
-        }
-        .education p, .courses ul, .languages ul {
-            font-size: 1.1em;
-        }
-        .languages li {
-            font-weight: bold;
-        }
-        .languages span {
-            font-weight: normal;
-            color: #555;
-        }
-        .reference {
-            background-color: #f4f8fa;
-            border: 1px solid #d6eaf8;
-            border-radius: 5px;
-            padding: 15px;
-            margin-top: 20px;
-        }
+\documentclass[11pt, a4paper]{article}
 
-    </style>
-</head>
-<body>
+% --- UNIVERSAL PREAMBLE BLOCK (Arabic) ---
+\usepackage[a4paper, top=2cm, bottom=2cm, left=1.8cm, right=1.8cm]{geometry}
+\usepackage{fontspec}
 
-    <div class="container">
-        <h1>Nahedh Mater Alshammari</h1>
-        <div class="contact-info">
-            Khafji, Saudi Arabia | 0531827621 | nu.mt222@gmail.com
-        </div>
+% إعداد اللغة العربية كلغة أساسية
+\usepackage[arabic, bidi=basic, provide=*]{babel}
 
-        <h3>Professional Summary</h3>
-        <p>A field-focused Mechanical Technician with three years of hands-on practical experience in demanding operational environments, including remote area maintenance and energy projects (Aramco). Possesses proven expertise in general mechanical maintenance (surface and underground). Thrives in challenging work environments and is ready for immediate deployment to any project site, demonstrating full commitment to achieving safety and operational targets under all conditions.</p>
+\babelprovide[import, onchar=ids fonts]{arabic}
+\babelprovide[import, onchar=ids fonts]{english}
 
-        <h3>Education</h3>
-        <div class="education">
-            <p><strong>Diploma (Associate Degree) in Mechanical Engineering Technology</strong>
-            <br>
-            University of Hafar Al Batin, Hafar Al Batin | Graduated: September 2022
-            <br>
-            GPA: 3.27 out of 4.00
-            <br>
-            <em>Senior Project: Generating electricity from spark plugs.</em></p>
-        </div>
+% تعيين الخط الافتراضي (للنصوص اللاتينية)
+\babelfont{rm}{Noto Sans}
+% تعيين الخط الخاص باللغة العربية
+\babelfont[arabic]{rm}{Noto Sans Arabic}
 
-        <h3>Professional Experience</h3>
-        
-        <div>
-            <div class="job-title">Mechanical Technician</div>
-            <div class="company-info">
-                <strong>JAZ Company</strong> | Remote Area
-                <br>
-                October 2023 – Present
-            </div>
-            <ul>
-                <li>Working in general mechanics (surface and underground) on an Aramco project mobilization.</li>
-            </ul>
-        </div>
+% تخصيص القوائم (استخدام شرطة كعلامة وبدون مسافة بادئة)
+\usepackage{enumitem}
+\setlist[itemize]{label=-, leftmargin=*, noitemsep}
+% --- END UNIVERSAL BLOCK ---
 
-        <div style="margin-top: 25px;">
-            <div class="job-title">Assistant Project Technician (COOP Training)</div>
-            <div class="company-info">
-                <strong>Saudi Aramco - Tanajib Gas Plant</strong> | Tanajib
-                <br>
-                June 2022 – October 2022 (4 Months)
-            </div>
-            <ul>
-                <li>Gained practical field experience in the oil & gas project environment and engineering workflows.</li>
-            </ul>
-        </div>
-        
-        <p style="font-size: 1.1em; font-weight: bold; margin-top: 20px; text-align: center;">* Total practical field experience: 3 years.</p>
+% لإضافة رابط البريد الإلكتروني (يجب أن يكون آخر حزمة)
+\usepackage[colorlinks=true, urlcolor=blue]{hyperref}
 
+% إزالة ترقيم الصفحات
+\pagestyle{empty}
 
-        <h3>Skills & Competencies</h3>
-        <div class="skills-section">
-            <div class="skills-category">
-                <strong>Technical Skills:</strong>
-                <ul>
-                    <li>Mechanical Maintenance (Surface/Underground)</li>
-                    <li>Piping & Compressors Installation</li>
-                    <li>Welding Inspection</li>
-                    <li>Digitalization Fundamentals</li>
-                </ul>
-            </div>
-            <div class="skills-category">
-                <strong>Core Competencies:</strong>
-                <ul>
-                    <li>Remote Area Operations</li>
-                    <li>Working Under Pressure & Time Management</li>
-                    <li>Quick Learning & Adaptability</li>
-                    <li>Safety Compliance</li>
-                    <li>Effective Communication & Teamwork</li>
-                </ul>
-            </div>
-        </div>
+% تخصيص العناوين
+\usepackage{titlesec}
+\titleformat*{\section}{\large\bfseries} % جعل العناوين على اليمين وبخط عريض
+\titlespacing*{\section}{0pt}{10pt}{5pt} % تقليل المسافات حول العناوين
 
-        <h3>Courses & Certifications (via Saudi Aramco)</h3>
-        <div class="courses">
-            <ul>
-                <li>Introduction to Digitalization</li>
-                <li>Code of Business Conduct</li>
-                <li>Information Security Essentials</li>
-                <li>Phishing Assessment</li>
-                <li>SADC Driving Course</li>
-                <li>Safety Handbook</li>
-            </ul>
-        </div>
+\begin{document}
 
-        <h3>Languages</h3>
-        <div class="languages">
-            <ul>
-                <li>Arabic: <span>Native</span></li>
-                <li>English: <span>Fluent</span></li>
-            </ul>
-        </div>
+% --- معلومات الاتصال ---
+\begin{center}
+    \Huge\bfseries بسام محمد محمد العويس
+    \vspace{6pt}
+    
+    \large%
+    جدة، المملكة العربية السعودية | 0562187640 | \href{mailto:bassam12335b@gmail.com}{bassam12335b@gmail.com}
+\end{center}
+\vspace{8pt}
 
-        <h3>References</h3>
-        <div class="reference">
-            <strong>Recommendation from Saudi Aramco:</strong>
-            <br>
-            Mr. Rashid AL Rashid
-            <br>
-            Phone: 0540554600
-            <br>
-            Email: Rashid.rashid.2@aramco.com
-        </div>
+% --- الملخص ---
+\section*{الملخص}
+\hrule % إضافة خط أفقي
+\vspace{4pt}
+خريج ثانوي حديث بمعدل ممتاز (91.54\%)، أمتلك خبرة عملية متنوعة في الإدارة التشغيلية، خدمة العملاء، وإدخال البيانات. أتميز بالانضباط، وسرعة التعلم، والقدرة على العمل بكفاءة تحت الضغط. أسعى لتطبيق مهاراتي والمساهمة في بيئة عمل ديناميكية.
 
-    </div>
+% --- الخبرة المهنية ---
+\section*{الخبرة المهنية}
+\hrule
+\vspace{4pt}
 
-</body>
-</html>
+\textbf{\large باريستا ومدير تشغيلي} \hfill \textit{2023 - حتى الآن}
+\\ \textit{مقهى، جدة}
+\begin{itemize}
+    \item إدارة العمليات اليومية للمقهى بكفاءة عالية.
+    \item الإشراف على فريق العمل، تنظيم الجداول، ومراقبة الأداء.
+    \item متابعة الطلبات، إدارة المشتريات والمخزون.
+    \item تحضير المشروبات (باريستا) وضمان تقديم أعلى مستويات جودة الخدمة.
+    \item تقديم خدمة عملاء ممتازة وحل أي شكاوى بفاعلية.
+\end{itemize}
+\vspace{6pt}
+
+\textbf{\large مدخل بيانات} \hfill \textit{2023 (دوام جزئي/موسمي)}
+\\ \textit{مرسى الأحلام، جدة}
+\begin{itemize}
+    \item إدخال البيانات ومعالجتها بدقة وسرية تامة.
+    \item المساعدة في تنظيم وأرشفة الملفات.
+\end{itemize}
+\vspace{6pt}
+
+\textbf{\large خبرات متنوعة (كاشير / مبيعات)} \hfill \textit{سابقاً}
+\\ \textit{معرض العطور وأدوار أخرى، جدة}
+\begin{itemize}
+    \item التعامل مع عمليات الدفع كنقطة بيع (كاشير) بدقة.
+    \item المساعدة في المبيعات وتقديم خدمة عملاء استباقية.
+\end{itemize}
+
+% --- التعليم ---
+\section*{التعليم}
+\hrule
+\vspace{4pt}
+\textbf{\large شهادة إتمام الثانوية العامة (مسار علمي)} \hfill \textit{دفعة 2024}
+\\ \textit{مدرسة الفزاري الثانوية، جدة}
+\begin{itemize}
+    \item المعدل التراكمي: 91.54\% (تقدير: ممتاز)
+\end{itemize}
+
+% --- الدورات والشهادات ---
+\section*{الدورات والشهادات}
+\hrule
+\vspace{4pt}
+\begin{itemize}
+    \item \textbf{دورة "مهارات الاتصال الفعّال"} (6 ساعات تطوعية) - (فريق هتان التاسع التطوعي والجمعية الفيصلية)، أغسطس 2024
+    \item \textbf{شهادة تقدير (تطوع 10 ساعات)} - "لقاء أهلا رمضان" - (مركز سمو الفكر للإرشاد الأسري)، فبراير 2024
+\end{itemize}
+
+% --- المهارات ---
+\section*{المهارات}
+\hrule
+\vspace{4pt}
+\textbf{المهارات العملية (Hard Skills)}
+\begin{itemize}
+    \item إدارة التشغيل
+    \item إدخال البيانات بدقة
+    \item استخدام أنظمة الكاشير (POS)
+    \item تحضير القهوة (باريستا)
+    \item العلاقات العامة
+    \item الإشراف والتنظيم
+    \item إجادة استخدام الحاسب الآلي وبرامج Microsoft Office
+\end{itemize}
+\vspace{6pt}
+\textbf{المهارات الشخصية (Soft Skills)}
+\begin{itemize}
+    \item مهارات التواصل الفعال
+    \item العمل تحت الضغط
+    \item حل المشكلات
+    \item العمل الجماعي
+    \item الانضباط والالتزام بالمواعيد
+    \item سرعة التعلّم وتحمل المسؤولية
+    \item المرونة والتكيف
+    \item إدارة الوقت وخدمة العملاء
+\end{itemize}
+
+% --- اللغات ---
+\section*{اللغات}
+\hrule
+\vspace{4pt}
+\begin{itemize}
+    \item \textbf{العربية:} اللغة الأم
+    \item \textbf{الإنجليزية:} مستوى جيد (قراءة وكتابة ومحادثة)
+\end{itemize}
+
+\end{document}
