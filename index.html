@@ -6,53 +6,54 @@
   <style>
     @page {
       size: A4;
-      margin: 2cm;
+      margin: 0;
     }
 
     body {
-      font-family: 'Tahoma', 'Arial', sans-serif;
-      background-color: #ffffff;
-      color: #000000;
-      direction: rtl;
-      line-height: 1.8;
-      font-size: 14.5px;
       margin: 0;
       padding: 0;
-      width: 210mm;
-      min-height: 297mm;
-      padding: 2cm;
+      background-color: #f7f7f7;
+      font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+    }
+
+    .cv-container {
+      width: 794px; /* A4 width in px at 96dpi */
+      min-height: 1123px; /* A4 height in px at 96dpi */
+      margin: 40px auto;
+      background-color: #ffffff;
+      padding: 50px 60px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.15);
       box-sizing: border-box;
+      color: #222;
+      line-height: 1.8;
+      font-size: 15px;
     }
 
-    .header {
-      text-align: center;
-      border-bottom: 2px solid #2E3A59;
-      margin-bottom: 30px;
-      padding-bottom: 10px;
-    }
-
-    .header h1 {
+    h1 {
       font-size: 26px;
-      margin: 0;
-      color: #2E3A59;
+      margin-bottom: 5px;
+      color: #1e2d49;
+      text-align: center;
     }
 
     .contact {
-      margin-top: 10px;
-      font-size: 13.5px;
-      color: #333;
+      text-align: center;
+      font-size: 14px;
+      color: #444;
+      margin-bottom: 30px;
     }
 
-    .section {
-      margin-top: 25px;
-    }
-
-    .section h2 {
-      color: #2E3A59;
+    h2 {
       font-size: 18px;
+      color: #1e2d49;
       border-bottom: 1px solid #ccc;
-      padding-bottom: 4px;
+      padding-bottom: 5px;
+      margin-top: 35px;
       margin-bottom: 10px;
+    }
+
+    p {
+      margin: 5px 0;
     }
 
     ul {
@@ -61,116 +62,47 @@
     }
 
     li {
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .two-columns {
       display: flex;
       justify-content: space-between;
-      gap: 50px;
+      gap: 60px;
     }
 
     .column {
       flex: 1;
     }
 
-    .label {
-      font-weight: bold;
-    }
-
     .language-level {
       display: flex;
       justify-content: space-between;
-      max-width: 300px;
+      max-width: 350px;
     }
 
-    .lang {
+    .label {
       font-weight: bold;
-    }
-
-    p {
-      margin: 5px 0;
     }
   </style>
 </head>
 <body>
 
-  <div class="header">
+  <div class="cv-container">
     <h1>بسام محمد العويس</h1>
     <div class="contact">
       جدة، المملكة العربية السعودية | 0562187640 | bassam12335b@gmail.com
     </div>
-  </div>
 
-  <div class="section">
     <h2>الملخص المهني</h2>
     <p>
-      شاب طموح بخبرة متعددة في خدمة العملاء، المقاهي، وإدخال البيانات.  
-      يتمتع بقدرات تنظيمية وتواصلية عالية، ويمتلك القدرة على التكيّف السريع والعمل تحت الضغط.  
-      جاهز للانضمام إلى بيئة عمل احترافية وتحقيق قيمة مضافة.
+      شاب طموح يتمتع بخبرة عملية متنوعة في خدمة العملاء، المقاهي، وإدخال البيانات. يمتاز بالمرونة وسرعة التعلّم، ويجيد التكيّف مع بيئات العمل المتغيرة. يسعى للانضمام إلى فريق احترافي يتيح له التطوير والمساهمة الفعّالة.
     </p>
-  </div>
 
-  <div class="section">
     <h2>المؤهل العلمي</h2>
-    <p><span class="label">الثانوية العامة – مسار علمي</span> – دفعة 2024</p>
-    <p>المعدل: 91.54% – التقدير: ممتاز</p>
-  </div>
+    <p><strong>الثانوية العامة – مسار علمي</strong> | دفعة 2024</p>
+    <p>المعدل: 91.54% | التقدير: ممتاز</p>
 
-  <div class="section">
     <h2>الخبرات العملية</h2>
     <ul>
-      <li><strong>مدير تشغيلي وبارستا – كوفي الان:</strong> إدارة العمليات اليومية، تقديم المشروبات، والإشراف على الفريق (لمدة سنة).</li>
-      <li><strong>مدخل بيانات – مرسى الأحلام:</strong> تنظيم وإدخال بيانات العملاء بدقة.</li>
-      <li><strong>موظف معرض – معرض العطور:</strong> ترتيب المنتجات وتقديم الخدمة للعملاء.</li>
-      <li><strong>كاشير – متجر محلي:</strong> إدارة نقاط البيع والتعامل مع العمليات المالية اليومية.</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h2>المهارات</h2>
-    <div class="two-columns">
-      <div class="column">
-        <ul>
-          <li>الحاسب الآلي</li>
-          <li>تشغيل الكاشير</li>
-          <li>تنظيم وتنسيق</li>
-          <li>الإشراف الميداني</li>
-          <li>إدخال البيانات</li>
-          <li>علاقات عامة</li>
-        </ul>
-      </div>
-      <div class="column">
-        <ul>
-          <li>التفكير الإبداعي</li>
-          <li>المرونة والتكيف</li>
-          <li>إدارة الوقت</li>
-          <li>حل المشكلات</li>
-          <li>العمل تحت الضغط</li>
-          <li>الالتزام والانضباط</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>الدورات والشهادات</h2>
-    <ul>
-      <li><strong>مهارات الاتصال الفعال:</strong> الجمعية الفيصلية الخيرية، 6 ساعات، بتاريخ 12/08/2024</li>
-      <li><strong>شهادة مشاركة – فعالية "كلاسيكيات عربية":</strong> فريق هتان – 16/05/2024</li>
-      <li><strong>شهادة شكر – "أهلاً رمضان":</strong> مركز سمو الفكر – 28-29 فبراير 2024 – 10 ساعات</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h2>اللغة</h2>
-    <div class="language-level">
-      <span class="lang">العربية:</span><span>اللغة الأم</span>
-    </div>
-    <div class="language-level">
-      <span class="lang">الإنجليزية:</span><span>جيد</span>
-    </div>
-  </div>
-
-</body>
-</html>
+      <li><strong>مدير تشغيلي وبارستا – كوفي الان:</strong> إدارة العمليات وتقديم المش
