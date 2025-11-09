@@ -1,170 +1,175 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-  <meta charset="UTF-8">
-  <title>Resume - Bassam Al-Owais</title>
-  <style>
-    @page {
-      size: A4;
-      margin: 0;
-    }
+\documentclass[11pt, a4paper]{article}
 
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-      font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
-    }
+% --- الحزمة الأساسية للخطوط والهوامش ---
+\usepackage[a4paper, top=2cm, bottom=2cm, left=1.8cm, right=1.8cm]{geometry} % هوامش احترافية
+\usepackage{fontspec} % لاستخدام خطوط حديثة
 
-    .cv-container {
-      width: 794px;
-      min-height: 1123px;
-      margin: 40px auto;
-      background-color: #ffffff;
-      padding: 50px 60px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.15);
-      box-sizing: border-box;
-      color: #222;
-      line-height: 1.8;
-      font-size: 15px;
-    }
+% --- إعدادات اللغة الإنجليزية (للمستند) ---
+\usepackage[english, bidi=basic, provide=*]{babel}
+\babelprovide[import, onchar=ids fonts]{english}
 
-    h1 {
-      font-size: 26px;
-      margin-bottom: 5px;
-      color: #1e2d49;
-      text-align: center;
-    }
+% --- تعيين الخط الأساسي (مطابق للمثال) ---
+% استخدام Noto Sans كخط افتراضي ليطابق النمط النظيف للمثال
+\babelfont{rm}{Noto Sans}
 
-    .contact {
-      text-align: center;
-      font-size: 14px;
-      color: #444;
-      margin-bottom: 30px;
-    }
+% --- حزم التنسيق ---
+\usepackage[parfill]{parskip} % لإلغاء إزاحة بداية الفقرة واستخدام مسافة بيضاء بدلاً منها
+\usepackage{titlesec} % للتحكم في تنسيق العناوين
+\usepackage{enumitem} % للتحكم المتقدم في القوائم النقطية
+\usepackage{textcase} % للتحكم في حالة الأحرف (UPPERCASE)
 
-    h2 {
-      font-size: 18px;
-      color: #1e2d49;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 5px;
-      margin-top: 35px;
-      margin-bottom: 10px;
-    }
+% --- إزالة ترقيم الأقسام ---
+\setcounter{secnumdepth}{0}
 
-    p {
-      margin: 5px 0;
-    }
+% --- تنسيق الأقسام (مطابق للمثال: حروف كبيرة، خط عريض، وخط أفقي) ---
+\titleformat{\section}
+  {\large\bfseries} % التنسيق: كبير وعريض
+  {} % البادئة (فارغة)
+  {0pt} % المسافة
+  {\MakeUppercase} % الأمر قبل العنوان (جعله حروف كبيرة)
+  [\titlerule] % الأمر بعد العنوان (إضافة خط أفقي)
+\titlespacing*{\section}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
 
-    ul {
-      padding-left: 20px;
-      margin: 0;
-    }
+% --- تنسيق القوائم النقطية (للوصف الوظيفي) ---
+\setlist[itemize]{leftmargin=*, label=\textbullet, topsep=0pt, partopsep=0pt, itemsep=0.5ex}
 
-    li {
-      margin-bottom: 6px;
-    }
+% --- حزمة الروابط (يجب أن تكون الأخيرة) ---
+% لجعل البريد الإلكتروني وروابط لينكدإن قابلة للنقر
+% جعل لون الروابط أسود ليتناسب مع التصميم (pdfborder يزيل الإطار المزعج)
+\usepackage[colorlinks=true, urlcolor=black, linkcolor=black, pdfborder={0 0 0}]{hyperref}
 
-    .two-columns {
-      display: flex;
-      justify-content: space-between;
-      gap: 60px;
-    }
+% --- بداية المستند ---
+\begin{document}
+\pagestyle{empty} % لإزالة أرقام الصفحات
 
-    .column {
-      flex: 1;
-    }
+% --- 1. معلومات الاتصال (Header) ---
+% --- تم التعديل لتحسين التنسيق والتوسيط ---
+\begin{center}
+    {\Huge\bfseries\MakeUppercase{Raed Al-Kubati}}
+    \\[1.5ex] % سطر جديد مع مسافة
+    {\large \href{mailto:raed.alkubati@yahoo.com}{raed.alkubati@yahoo.com} \textbar +966599266217}
+    \\[0.5ex] % سطر جديد بمسافة أقل
+    {\large Saudi Arabia \textbar \href{https://www.linkedin.com/in/raed-al-kubati-218a02102}{linkedin.com/in/raed-al-kubati}}
+\end{center}
+\vspace{1ex} % مسافة فاصلة
 
-    .language-level {
-      display: flex;
-      justify-content: space-between;
-      max-width: 350px;
-    }
+% --- 2. الملخص الاحترافي (Profile Summary) ---
+\section{Profile Summary}
+Detail-oriented and results-driven Field Services Engineer with over 9 years of hands-on experience in the installation, maintenance, and repair of advanced medical equipment. Proven expertise in Mindray anesthesia and ventilator systems (Wato/A-Series, Sv-Series), alongside a strong technical background with brands like Stryker, STERIS, and Philips. Currently enhancing technical skills with a Master's in Project Management. Seeking to leverage extensive field expertise and strong problem-solving abilities to ensure optimal equipment performance and support operational efficiency in a challenging technical role.
 
-    .label {
-      font-weight: bold;
-    }
-  </style>
-</head>
-<body>
+% --- 3. التعليم (Education) ---
+\section{Education}
 
-  <div class="cv-container">
-    <h1>Bassam Mohammed Al-Owais</h1>
-    <div class="contact">
-      Jeddah, Saudi Arabia | 0562187640 | bassam12335b@gmail.com
-    </div>
+\textbf{Master's in Project Management} \hfill \textbf{2024–2025 (In Progress)} \\
+\textit{Midocean University (Comoros)}
+\vspace{1.5ex} % مسافة بين الشهادتين
 
-    <h2>Professional Summary</h2>
-    <p>
-      A motivated and multi-skilled individual with hands-on experience in customer service, coffee industry operations, cashier work, and data entry. Highly adaptable, quick to learn, and excels under pressure. Seeking to contribute in a professional environment and add immediate value.
-    </p>
+\textbf{Bachelor of Engineering (Honours), Electronics (Bio-Instrumentation)} \hfill \textbf{2007–2014} \\
+\textit{Multimedia University (Malaysia - Melaka)}
 
-    <h2>Education</h2>
-    <p><strong>High School – Science Track</strong></p>
-    <p>Class of 2024 | GPA: 91.54% | Grade: Excellent</p>
 
-    <h2>Professional Experience</h2>
-    <ul>
-      <li><strong>Operational Manager & Barista – Coffee Now:</strong> Managed day-to-day operations, prepared beverages, and supervised staff. (1 Year)</li>
-      <li><strong>Data Entry Clerk – Marsa Al-Ahlam:</strong> Accurately entered and organized customer data.</li>
-      <li><strong>Exhibition Staff – Perfume Gallery:</strong> Assisted customers and organized product displays.</li>
-      <li><strong>Cashier – Local Store:</strong> Operated POS system and handled daily transactions.</li>
-    </ul>
+% --- 4. الخبرة المهنية (Professional Experience) ---
+\section{Professional Experience}
 
-    <h2>Technical Skills</h2>
-    <div class="two-columns">
-      <div class="column">
-        <ul>
-          <li>Computer Proficiency</li>
-          <li>POS & Cashiering</li>
-          <li>Workplace Organization</li>
-          <li>Operational Development</li>
-        </ul>
-      </div>
-      <div class="column">
-        <ul>
-          <li>Public Relations</li>
-          <li>Coffee Craft Knowledge</li>
-          <li>Team Supervision</li>
-          <li>Accurate Data Entry</li>
-        </ul>
-      </div>
-    </div>
+% --- الشركة 1: TIBBIYAH ---
+\textbf{Field Services Engineer} \hfill \textbf{Feb 2020 – Present} \\
+\textit{TIBBIYAH / Arabian International Healthcare Holding Co (FMS)}
+\begin{itemize}
+    \item Specializes in Mindray Anesthesia Systems (Wato Series / A Series) and Ventilator Systems (Sv300/Sv600/Sv800).
+    \item Manages installation, repair, and maintenance of advanced medical equipment from manufacturers including ONDAL, PHILIPS, STRYKER, SCHMITZ, COVIDIEN, and STERIS.
+    \item Diagnoses technical errors and determines proper solutions to ensure minimal downtime.
+    \item Produces timely and detailed service reports for documentation and quality assurance.
+    \item Supports operational efficiency by maintaining equipment at peak performance levels.
+\end{itemize}
 
-    <h2>Soft Skills</h2>
-    <ul>
-      <li>Effective Communication</li>
-      <li>Working Under Pressure</li>
-      <li>Problem Solving</li>
-      <li>Creative Thinking</li>
-      <li>Teamwork</li>
-      <li>Time Management</li>
-      <li>Discipline & Punctuality</li>
-      <li>Fast Learning</li>
-      <li>Responsibility & Accountability</li>
-      <li>Flexibility & Adaptability</li>
-      <li>Task Follow-Up</li>
-      <li>Customer Service & Complaint Handling</li>
-      <li>Order & Inventory Tracking</li>
-      <li>Performance Monitoring & Analysis</li>
-    </ul>
+% --- الشركة 2: BIOALTERNATIVES ---
+\textbf{Regional Support Engineer} \hfill \textbf{Jan 2017 – Jan 2019} \\
+\textit{BIOALTERNATIVES EST. Treading}
+\begin{itemize}
+    \item Repaired, serviced, tested, and installed specialized laboratory medical and pharmaceutical test equipment.
+    \item Maintained up-to-date product knowledge across a diverse equipment portfolio.
+    \item Collaborated with management and engineering staff to resolve complex operational issues.
+    \item Managed technical projects, including the preparation of bids and scopes of work (SOW).
+    \item Communicated new technologies and service solutions to clients.
+\end{itemize}
 
-    <h2>Courses & Certifications</h2>
-    <ul>
-      <li><strong>Effective Communication Skills:</strong> Provided by Al-Faisaliah Charitable Association & Future Formation Institute – Jeddah International College – Aug 12, 2024 – 6 volunteer hours.</li>
-      <li><strong>Appreciation Certificate:</strong> Sumo Al-Fikr Family Counseling Center – “Welcome Ramadan” Event – Feb 28–29, 2024 – 10 volunteer hours.</li>
-      <li><strong>Participation Certificate – “Arabian Classics” Event:</strong> Hattan Arts Team – Al-Bar Volunteer Club – May 16, 2024</li>
-    </ul>
+% --- الشركة 3: Al-Shikhi ---
+\textbf{Biomedical Engineer} \hfill \textbf{May 2015 – Nov 2016} \\
+\textit{Mohamed Ibrahim O. Al-Shikhi Br. Est.}
+\begin{itemize}
+    \item Evaluated the safety, efficiency, and effectiveness of biomedical equipment.
+    \item Managed the full lifecycle of medical devices, including installation, maintenance, repair, and calibration.
+    \item Provided critical technical support to clinical staff.
+    \item Conducted comprehensive training sessions for clinicians on the proper use and handling of equipment.
+    \item Maintained detailed service and maintenance records.
+\end{itemize}
 
-    <h2>Languages</h2>
-    <div class="language-level">
-      <span><strong>Arabic:</strong></span><span>Native</span>
-    </div>
-    <div class="language-level">
-      <span><strong>English:</strong></span><span>Good</span>
-    </div>
+% --- التدريب: KAUH ---
+\textbf{Medical Engineer (Trainee)} \hfill \textbf{Mar 2013 – May 2013} \\
+\textit{KING ABDULAZIZ UNIVERSITY HOSPITAL}
+\begin{itemize}
+    \item Assisted in servicing and improving medical equipment, focusing on cost-effective solutions.
+    \item Contributed to the design of new equipment parts and the improvement of existing designs.
+\end{itemize}
 
-  </div>
 
-</body>
-</html>
+% --- 5. الشهادات والاعتمادات (Licenses & Certifications) ---
+\section{Licenses \& Certifications}
+\begin{itemize}
+    \item \textbf{Mindray (Ventilator):} Technical Service Training For Ventilator - Sv300/Sv600 \& Sv800
+    \item \textbf{Mindray (Anesthesia):} Technical Service Training For Anesthesia Wato Series / A Series (A7/A8/A9)
+    \item \textbf{Stryker:} Surgical Table And Light / Surgical Products
+    \item \textbf{STERIS:} Sterilization - 130 Hpo/130 Lhfs Sirius
+\end{itemize}
+
+% --- 6. المهارات (Skills) ---
+\section{Skills}
+
+% استخدام عمودين لتنظيم المهارات بشكل أفضل
+\begin{minipage}[t]{0.5\textwidth}
+    \textbf{Technical Expertise}
+    \begin{itemize}
+        \item ICU Department Equipment
+        \item Anesthesia Systems (Mindray)
+        \item Mindray Ventilators (Sv-Series)
+        \item Medical Device Installation, Repair \& Maintenance
+        \item Technical Operations
+    \end{itemize}
+    \vspace{1ex}
+    \textbf{Quality \& Process}
+    \begin{itemize}
+        \item Quality Assurance \& Quality Control (QA/QC)
+        \item Scopes Of Work (SOW)
+        \item Technical Reviews
+        \item Service Contracts
+        \item Corrective Actions
+    \end{itemize}
+\end{minipage}%  <--- *** تم تصحيح الخطأ هنا ***
+\begin{minipage}[t]{0.5\textwidth}
+    \textbf{Management \& Operations}
+    \begin{itemize}
+        \item Field Service Engineering
+        \item Project Management
+        \item Team Leadership \& Management
+        \item Customer Service Management
+        \item Strategic Planning
+    \end{itemize}
+    \vspace{1ex}
+    \textbf{Soft Skills}
+    \begin{itemize}
+        \item Customer Service
+        \item Negotiation
+        \item Communication
+        \item Teamwork \& Cross-team Collaboration
+    \end{itemize}
+\end{minipage}
+
+% --- 7. اللغات (Languages) ---
+\section{Languages}
+\begin{itemize}
+    \item \textbf{Arabic:} Native
+    \item \textbf{English:} Professional Working Proficiency
+\end{itemize}
+
+% --- نهاية المستند ---
+\end{document}
