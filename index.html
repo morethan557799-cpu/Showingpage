@@ -1,110 +1,168 @@
-% PREAMBLE: Defines document type and layout
-% We use 'moderncv' for a professional look and 'classic' style for ATS-friendliness
-\documentclass[11pt, a4paper]{moderncv}
-\moderncvstyle{classic} % 'classic' is the most ATS-friendly style
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سيرة ذاتية - عبدالله ال طالب</title>
+    <!-- تحميل Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* استخدام خط Inter الافتراضي لـ Tailwind */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa; /* لون خلفية أفتح قليلاً */
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
 
-% Set A4 dimensions precisely as requested
-\usepackage[a4paper, top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+    <!-- حاوية السيرة الذاتية -->
+    <div class="container mx-auto max-w-4xl bg-white shadow-xl rounded-lg my-12 p-10 md:p-16">
 
-% --- PERSONAL INFORMATION (Centered as requested) ---
-\name{RAED}{AL-KUBATI}
-% All contact info is centered under the name
-\address{raed.alkubati@yahoo.com | +966599266217}{Saudi Arabia | linkedin.com/in/raed-al-kubati}{}
+        <!-- 1. ترويسة الاسم ومعلومات الاتصال (تنسيق بصري متوازن) -->
+        <header class="text-center mb-10">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900">
+                عبدالله ال طالب
+            </h1>
+            
+            <!-- حاوية معلومات الاتصال المنسقة -->
+            <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-gray-600 mt-5 text-base">
+                
+                <!-- البريد الإلكتروني -->
+                <div class="flex items-center gap-1.5">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-gray-500">
+                        <path d="M3 4a2 2 0 0 0-2 2v1.161l8.441 4.221a1.25 1.25 0 0 0 1.118 0L19 7.161V6a2 2 0 0 0-2-2H3Z" />
+                        <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 0 1-2.46 0L1 8.839V14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.839Z" />
+                    </svg>
+                    <span dir="ltr" class="text-gray-700">Abdullah.altaleb90@gmail.com</span>
+                </div>
+                
+                <!-- رقم الهاتف -->
+                <div class="flex items-center gap-1.5">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-gray-500">
+                        <path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 0 1 3.5 2h1.148a1.5 1.5 0 0 1 1.465 1.175l.716 3.223a1.5 1.5 0 0 1-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 0 0 6.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 0 1 1.767-1.052l3.223.716A1.5 1.5 0 0 1 18 15.352V16.5a1.5 1.5 0 0 1-1.5 1.5h-1A15.5 15.5 0 0 1 2 3.5Z" clip-rule="evenodd" />
+                    </svg>
+                    <span dir="ltr" class="text-gray-700">+966582903371</span>
+                </div>
+                
+                <!-- الموقع -->
+                <div class="flex items-center gap-1.5">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-gray-500">
+                        <path fill-rule="evenodd" d="m9.69 18.933.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 0 0 .281-.14c.186-.1.4-.223.654-.369.395-.226.86-.506 1.327-.827.843-.575 1.722-1.28 2.38-2.05A8.819 8.819 0 0 0 16.75 10c0-4.418-3.582-8-8-8s-8 3.582-8 8c0 1.961.71 3.79 1.907 5.254.658.77 1.537 1.475 2.38 2.05.467.321.932.601 1.327.827.254.146.468.269.654.369a5.741 5.741 0 0 0 .281.14l.018.008.006.003Z" clip-rule="evenodd" />
+                        <path d="M10 11.25a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5Z" />
+                    </svg>
+                    <span class="text-gray-700">السعودية</span>
+                </div>
+            </div>
+        </header>
 
-% --- BEGIN DOCUMENT ---
-\begin{document}
+        <!-- 2. قسم الملخص المهني -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 uppercase border-b-2 border-gray-300 pb-2 mb-4">
+                الملخص المهني
+            </h2>
+            <p class="text-gray-800 leading-relaxed text-base">
+                أخصائي دعم فني حديث التخرج بشهادة دبلوم في دعم فني الحاسب الآلي. حاصل على شهادات احترافية تشمل ITIL و CCNA، مما يوفر أساساً قوياً في إدارة خدمات تكنولوجيا المعلومات والشبكات. أمتلك مهارات مثبتة في اكتشاف المشكلات وحلها، والقدرة على تحمل مسؤوليات العمل بكفاءة. أتطلع إلى المساهمة بقدراتي التقنية، الإدارية، ومهارات التواصل الفعال في تحقيق أهداف أي منشأة.
+            </p>
+        </section>
 
-% Create the title (centered header)
-\maketitle
+        <!-- 3. قسم التعليم الأكاديمي -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 uppercase border-b-2 border-gray-300 pb-2 mb-4">
+                التعليم الأكاديمي
+            </h2>
+            <div class="flex justify-between items-start">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800">دبلوم دعم فني حاسب آلي</h3>
+                    <p class="text-gray-600 mt-1 text-base">الكلية التقنية، السعودية</p>
+                </div>
+                <span class="text-gray-500 text-sm italic whitespace-nowrap">أغسطس 2021</span>
+            </div>
+        </section>
 
-% --- PROFILE SUMMARY ---
-\section{PROFILE SUMMARY}
-\cvitem{}{Detail-oriented and results-driven Field Services Engineer with over 9 years of hands-on experience in the installation, maintenance, and repair of advanced medical equipment. Proven expertise in Mindray anesthesia and ventilator systems (Wato/A-Series, Sv-Series), alongside a strong technical background with brands like Stryker, STERIS, and Philips. Currently enhancing technical skills with a Master's in Project Management (In Progress, 2025). Seeking to leverage extensive field expertise and strong problem-solving abilities to ensure optimal equipment performance and support operational efficiency in a challenging technical role.}
+        <!-- 4. قسم الشهادات والدورات (تنسيق عميق) -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 uppercase border-b-2 border-gray-300 pb-2 mb-4">
+                الشهادات والدورات التدريبية
+            </h2>
+            <ul class="space-y-4">
+                
+                <li class="flex items-start gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-blue-600 flex-shrink-0 mt-1">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" />
+                    </svg>
+                    <div>
+                        <h3 class="font-semibold text-gray-800">شهادة ITIL الإحترافية (ITIL v4 Foundation)</h3>
+                        <p class="text-gray-600 text-sm">تأسيس مفاهيم إدارة خدمات تكنولوجيا المعلومات (ITSM) وتحسين جودة الخدمة.</p>
+                    </div>
+                </li>
+                
+                <li class="flex items-start gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-blue-600 flex-shrink-0 mt-1">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" />
+                    </svg>
+                    <div>
+                        <h3 class="font-semibold text-gray-800">دورة CCNA (Cisco Certified Network Associate)</h3>
+                        <p class="text-gray-600 text-sm">تأسيس وإدارة واستكشاف أخطاء الشبكات المتوسطة الحجم.</p>
+                    </div>
+                </li>
 
-% --- SKILLS (The most important ATS fix) ---
-% We replace the table with structured subsections and lists.
-% This is 100% readable by ATS and looks clean to humans.
-\section{SKILLS}
+                <li class="flex items-start gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-blue-600 flex-shrink-0 mt-1">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" />
+                    </svg>
+                    <div>
+                        <h3 class="font-semibold text-gray-800">برنامج تدريبي في مجال أمن المعلومات</h3>
+                        <p class="text-gray-600 text-sm">فهم المبادئ الأساسية للأمن السيبراني وحماية البيانات.</p>
+                    </div>
+                </li>
+                
+            </ul>
+        </section>
 
-\subsection{Technical Expertise}
-\cvlistitem{Field Service Engineering}
-\cvlistitem{ICU Department Equipment}
-\cvlistitem{Anesthesia Systems (Mindray Wato/A-Series)}
-\cvlistitem{Ventilators (Mindray Sv-Series)}
-\cvlistitem{Medical Device Installation, Repair \& Maintenance} % *** FIX 1: Escaped & ***
-\cvlistitem{Technical Operations \& Support}
-\cvlistitem{Diagnostics \& Troubleshooting}
-\cvlistitem{Calibration \& Testing}
-\cvlistitem{Quality Assurance \& Quality Control (QA/QC)}
+        <!-- 5. قسم المهارات (تنسيق أعمدة مع مهارات إضافية) -->
+        <section>
+            <h2 class="text-2xl font-bold text-gray-900 uppercase border-b-2 border-gray-300 pb-2 mb-4">
+                المهارات
+            </h2>
+            
+            <div class="flex flex-col md:flex-row md:space-x-12 rtl:space-x-reverse">
+                
+                <!-- العمود الأول: المهارات التقنية -->
+                <div class="w-full md:w-1/2">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">المهارات التقنية</h3>
+                    <ul class="list-disc list-inside pr-5 text-gray-700 space-y-2">
+                        <li>صيانة وتشخيص أعطال الحاسب (Hardware)</li>
+                        <li>إدارة أنظمة التشغيل (Windows 10/11)</li>
+                        <li>دعم تطبيقات Microsoft 365 / Office</li>
+                        <li>إدارة الشبكات الأساسية (TCP/IP, DNS, DHCP)</li>
+                        <li>العمل على أنظمة الدعم الفني (Ticketing Systems)</li>
+                        <li>إعداد الطابعات والأجهزة الطرفية</li>
+                        <li>تطبيق مبادئ ITIL في إدارة الخدمات</li>
+                        <li>فهم بروتوكولات الشبكات (CCNA)</li>
+                        <li>أساسيات أمن المعلومات</li>
+                    </ul>
+                </div>
+                
+                <!-- العمود الثاني: المهارات الشخصية -->
+                <div class="w-full md:w-1/2 mt-6 md:mt-0">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">المهارات الشخصية</h3>
+                    <ul class="list-disc list-inside pr-5 text-gray-700 space-y-2">
+                        <li>التفكير التحليلي واكتشاف المشكلات</li>
+                        <li>تحمل مسؤوليات العمل والإشراف</li>
+                        <li>التواصل الفعال وبناء العلاقات</li>
+                        <li>التنظيم وإدارة الأولويات والوقت</li>
+                        <li>المرونة والتكيف مع بيئات العمل المتغيرة</li>
+                        <li>التوثيق الفني وإعداد التقارير</li>
+                        <li>القدرة على القيام بالمهام الإدارية</li>
+                        <li>الشخصية القيادية والمبادرة</li>
+                    </ul>
+                </div>
 
-\subsection{Management \& Operations} % *** FIX 2: Escaped & ***
-\cvlistitem{Project Management}
-\cvlistitem{Team Leadership \& Management} % *** FIX 3: Escaped & ***
-\cvlistitem{Customer Service Management}
-\cvlistitem{Strategic Planning}
-\cvlistitem{Scopes Of Work (SOW) Development}
-\cvlistitem{Service Contracts}
-\cvlistitem{Technical Reviews \& Reporting}
-\cvlistitem{Corrective Actions}
+            </div>
+        </section>
 
-\subsection{Soft Skills}
-\cvlistitem{Customer Service}
-\cvlistitem{Negotiation}
-\cvlistitem{Communication}
-\cvlistitem{Teamwork \& Cross-team Collaboration}
+    </div> <!-- نهاية حاوية السيرة الذاتية -->
 
-% --- PROFESSIONAL EXPERIENCE ---
-\section{PROFESSIONAL EXPERIENCE}
-% 'cventry' command structures the data perfectly for ATS
-\cventry{Feb 2020 - Present}{Field Services Engineer}{TIBBIYAH / Arabian International Healthcare Holding Co (FMS)}{}{}{%
-\begin{itemize}%
-\item Manages installation, repair, and maintenance of equipment from various manufacturers (e.g., ONDAL, PHILIPS, STRYKER, STERIS).
-\item Diagnoses technical errors and determines proper solutions to ensure minimal downtime.
-\item Produces timely and detailed service reports for documentation and quality assurance.
-\item Supports operational efficiency by maintaining equipment at peak performance levels.
-\end{itemize}}
-
-\cventry{Jan 2017 - Jan 2019}{Regional Support Engineer}{BIOALTERNATIVES EST. Treading}{}{}{%
-\begin{itemize}%
-\item Repaired, serviced, tested, and installed specialized laboratory medical and pharmaceutical test equipment.
-\item Maintained up-to-date product knowledge across a diverse equipment portfolio.
-\item Collaborated with management and engineering staff to resolve complex operational issues.
-\item Managed technical projects, including the preparation of bids and scopes of work (SOW).
-\item Communicated new technologies and service solutions to clients.
-\end{itemize}}
-
-\cventry{May 2015 - Nov 2016}{Biomedical Engineer}{Mohamed Ibrahim O. Al-Shikhi Br. Est.}{}{}{%
-\begin{itemize}%
-\item Evaluated the safety, efficiency, and effectiveness of biomedical equipment.
-\item Managed the full lifecycle of medical devices, including installation, maintenance, repair, and calibration.
-\item Provided critical technical support and comprehensive training to clinical staff on equipment use.
-\item Maintained detailed service and maintenance records.
-\end{itemize}}
-
-\cventry{Mar 2013 - May 2013}{Medical Engineer (Trainee)}{KING ABDULAZIZ UNIVERSITY HOSPITAL}{}{}{%
-\begin{itemize}%
-\item Assisted in servicing and improving medical equipment, focusing on cost-effective solutions.
-\item Contributed to the design of new equipment parts and the improvement of existing designs.
-\end{itemize}}
-
-% --- LICENSES & CERTIFICATIONS ---
-\section{LICENSES \& CERTIFICATIONS}
-\cvlistitem{Mindray (Ventilator): Technical Service Training For Ventilator - Sv300/Sv600 \& Sv800}
-\cvlistitem{Mindray (Anesthesia): Technical Service Training For Anesthesia Wato Series / A Series (A7/A8/A9)}
-\cvlistitem{Stryker: Surgical Table And Light / Surgical Products}
-\cvlistitem{STERIS: Sterilization - 130 Hpo/130 Lhfs Sirius}
-\cvlistitem{Enraf-Nonius B.V.: Curapuls 670/970, 1-Series, 4-Series, Tecarpuls Il, Compact ll, Eltrac 471, CryoOne \& EN-Motion}
-
-% --- EDUCATION ---
-\section{EDUCATION}
-\cventry{2024 - 2025}{Master's in Project Management (In Progress)}{Midocean University (Comoros)}{}{}{}
-\cventry{2007 - 2014}{Bachelor of Engineering (Honours), Electronics (Bio-Instrumentation)}{Multimedia University (Malaysia - Melaka)}{}{}{}
-
-% --- LANGUAGES ---
-\section{LANGUAGES}
-\cvlanguage{Arabic}{Native}{}
-\cvlanguage{English}{Native}{}
-\cvlanguage{Malay}{Advanced}{}
-\cvlanguage{Indonesian}{Advanced}{}
-
-\end{document}
+</body>
+</html>
