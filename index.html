@@ -1,473 +1,468 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TUROCK | مستقبل السيادة المائية</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- خطوط جوجل: تجول للغة العربية، مونتسيرات للغة الإنجليزية/الأرقام -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Tajawal:wght@300;400;700;900&display=swap" rel="stylesheet">
-    <!-- Font Awesome 6 (رابط ثابت) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <!-- مكتبة الرسوم المتحركة AOS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TUROCK | مستقبل السيادة المائية</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- خطوط جوجل: تجول للغة العربية، مونتسيرات للغة الإنجليزية/الأرقام -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Tajawal:wght@300;400;700;900&display=swap" rel="stylesheet">
+<!-- Font Awesome 6 (رابط ثابت) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<!-- مكتبة الرسوم المتحركة AOS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Tajawal', 'sans-serif'],
-                        eng: ['Montserrat', 'sans-serif'],
-                    },
-                    colors: {
-                        'deep-blue': '#0B1120',
-                        'ocean': '#0f172a',
-                        'aqua': '#06b6d4',
-                        'cyan-light': '#ecfeff',
-                        'glass': 'rgba(255, 255, 255, 0.05)',
-                        'glass-edge': 'rgba(255, 255, 255, 0.1)',
-                    },
-                    animation: {
-                        'slow-pulse': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'radiate': 'glow 3s ease-in-out infinite alternate',
-                        'float': 'float 6s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        glow: {
-                            '0%': { textShadow: '0 0 10px #06b6d4, 0 0 20px #06b6d4' },
-                            '100%': { textShadow: '0 0 20px #22d3ee, 0 0 30px #22d3ee' },
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+fontFamily: {
+sans: ['Tajawal', 'sans-serif'],
+eng: ['Montserrat', 'sans-serif'],
+},
+colors: {
+'deep-blue': '#0B1120',
+'ocean': '#0f172a',
+'aqua': '#06b6d4',
+'cyan-light': '#ecfeff',
+'glass': 'rgba(255, 255, 255, 0.05)',
+'glass-edge': 'rgba(255, 255, 255, 0.1)',
+},
+animation: {
+'slow-pulse': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+'radiate': 'glow 3s ease-in-out infinite alternate',
+'float': 'float 6s ease-in-out infinite',
+},
+keyframes: {
+glow: {
+'0%': { textShadow: '0 0 10px #06b6d4, 0 0 20px #06b6d4' },
+'100%': { textShadow: '0 0 20px #22d3ee, 0 0 30px #22d3ee' },
+},
+float: {
+'0%, 100%': { transform: 'translateY(0)' },
+'50%': { transform: 'translateY(-20px)' },
+}
+}
+}
+}
+}
+</script>
 
-    <style>
-        body {
-            background-color: #0B1120;
-            color: #e2e8f0;
-            overflow-x: hidden;
-        }
-        /* شريط التمرير المخصص */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0f172a;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #06b6d4;
-            border-radius: 4px;
-        }
-        
-        .glass-panel {
-            background: rgba(15, 23, 42, 0.6);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(6, 182, 212, 0.15);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-        }
+<style>
+body {
+background-color: #0B1120;
+color: #e2e8f0;
+overflow-x: hidden;
+}
+/* شريط التمرير المخصص */
+::-webkit-scrollbar {
+width: 8px;
+}
+::-webkit-scrollbar-track {
+background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+background: #06b6d4;
+border-radius: 4px;
+}
 
-        .gradient-text {
-            background: linear-gradient(to right, #22d3ee, #ffffff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        /* تم تغيير اسم الكلاس هنا ليطابق الاسم الجديد */
-        .turock-title {
-            font-family: 'Montserrat', sans-serif;
-            letter-spacing: 4px;
-        }
-        
-        /*تصميم الشارة القانونية*/
-        .legal-section-bg {
-            background-image: radial-gradient(circle at center, rgba(6, 182, 212, 0.05) 0%, transparent 70%);
-        }
-    </style>
+.glass-panel {
+background: rgba(15, 23, 42, 0.6);
+backdrop-filter: blur(12px);
+-webkit-backdrop-filter: blur(12px);
+border: 1px solid rgba(6, 182, 212, 0.15);
+box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.gradient-text {
+background: linear-gradient(to right, #22d3ee, #ffffff);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.turock-title {
+font-family: 'Montserrat', sans-serif;
+letter-spacing: 4px;
+}
+
+/*تصميم الشارة القانونية*/
+.legal-section-bg {
+background-image: radial-gradient(circle at center, rgba(6, 182, 212, 0.05) 0%, transparent 70%);
+}
+</style>
 </head>
 <body class="antialiased">
 
-    <!-- التنقل / الرأس -->
-    <nav class="sticky w-full z-50 top-0 transition-all duration-300 glass-panel py-4 border-b border-white/5">
-        <div class="container mx-auto px-6 flex justify-between items-center">
-            <!-- الشعار: TUROCK (باللغة الإنجليزية فقط) -->
-            <div class="text-3xl font-black tracking-wider text-white flex items-center gap-3 font-eng">
-                <i class="fa-solid fa-droplet text-aqua drop-shadow-[0_0_5px_rgba(6,182,212,0.8)]"></i>TUROCK
-            </div>
-            <div class="text-xs md:text-sm font-light text-gray-400 hidden md:block border-r border-gray-700 pr-4">
-                وثيقة العرض
-            </div>
-        </div>
-    </nav>
+<!-- التنقل / الرأس -->
+<nav class="sticky w-full z-50 top-0 transition-all duration-300 glass-panel py-4 border-b border-white/5">
+<div class="container mx-auto px-6 flex justify-between items-center">
+<!-- الشعار: TUROCK (باللغة الإنجليزية فقط) -->
+<div class="text-3xl font-black tracking-wider text-white flex items-center gap-3 font-eng">
+<i class="fa-solid fa-droplet text-aqua drop-shadow-[0_0_5px_rgba(6,182,212,0.8)]"></i>TUROCK
+</div>
+<div class="text-xs md:text-sm font-light text-gray-400 hidden md:block border-r border-gray-700 pr-4">
+وثيقة العرض
+</div>
+</div>
+</nav>
 
-    <!-- قسم البطل -->
-    <section class="relative min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20 overflow-hidden">
-        <!-- تأثير الخلفية المجردة -->
-        <div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] md:w-[900px] md:h-[900px] bg-aqua rounded-full blur-[150px] animate-slow-pulse"></div>
-        </div>
+<!-- قسم البطل -->
+<section class="relative min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20 overflow-hidden">
+<!-- تأثير الخلفية المجردة -->
+<div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] md:w-[900px] md:h-[900px] bg-aqua rounded-full blur-[150px] animate-slow-pulse"></div>
+</div>
 
-        <div class="relative z-10 max-w-5xl mx-auto mt-10" data-aos="zoom-in" data-aos-duration="1500">
-            <h2 class="text-aqua text-sm md:text-lg font-light mb-6 tracking-[0.3em] uppercase font-eng">سيادة الجيل القادم</h2>
-            <!-- تم تطبيق الكلاس الصحيح هنا -->
-            <h1 class="turock-title text-7xl md:text-9xl font-black text-white mb-4 animate-radiate font-eng">
-                TUROCK
-            </h1>
-            
-            <!-- اسم المخترع - تم التعديل إلى الإنجليزية -->
-            <p class="text-sm text-gray-400 font-eng tracking-wider mb-8" data-aos="fade-in" data-aos-delay="500">
-                Invention by <span class="text-aqua font-semibold">ALWALEED ALGHAMDI</span> | Innovator & Developer
-            </p>
-            
-            <p class="text-lg md:text-2xl text-gray-300 font-light leading-relaxed max-w-3xl mx-auto" data-aos="fade-in" data-aos-delay="200">
-                ليس مجرد جهاز.. بل نقطة تحول في تاريخ إنتاج الموارد الحيوية.
-                <br>
-                <span class="block mt-2 text-white font-bold">ماء نقي. طاقة نظيفة. في أي مكان.</span>
-            </p>
-        </div>
+<div class="relative z-10 max-w-5xl mx-auto mt-10" data-aos="zoom-in" data-aos-duration="1500">
+<h2 class="text-aqua text-sm md:text-lg font-light mb-6 tracking-[0.3em] uppercase font-eng">NEXT-GEN SOVEREIGNTY</h2>
+<h1 class="turock-title text-7xl md:text-9xl font-black text-white mb-4 animate-radiate font-eng">
+TUROCK
+</h1>
+<!-- اسم المخترع - تم التعديل إلى الإنجليزية -->
+<p class="text-sm text-gray-400 font-eng tracking-wider mb-8" data-aos="fade-in" data-aos-delay="500">
+Invention by <span class="text-aqua font-semibold">ALWALEED ALGHAMDI</span> | Innovator & Developer
+</p>
 
-        <!-- مؤشر التمرير -->
-        <div class="absolute bottom-10 animate-bounce">
-            <i class="fa-solid fa-chevron-down text-aqua text-2xl opacity-70"></i>
-        </div>
-    </section>
+<p class="text-lg md:text-2xl text-gray-300 font-light leading-relaxed max-w-3xl mx-auto" data-aos="fade-in" data-aos-delay="200">
+ليس مجرد جهاز.. بل نقطة تحول في تاريخ إنتاج الموارد الحيوية.
+<br>
+<span class="block mt-2 text-white font-bold">ماء نقي. طاقة نظيفة. في أي مكان.</span>
+</p>
+</div>
 
-    <!-- الواقع الحالي (بيان المشكلة) -->
-    <section class="py-24 bg-deep-blue relative z-10">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-20" data-aos="fade-in">
-                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">لماذا يحتاج العالم <span class="font-eng text-aqua">TUROCK</span> الآن؟</h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-transparent via-aqua to-transparent mx-auto rounded-full"></div>
-                <p class="mt-6 text-gray-400 max-w-2xl mx-auto text-lg">
-                    وصلت الطرق التقليدية بأسعار معقولة إلى طريق مسدود حيث التكلفة والأثر البيئي.
-                </p>
-            </div>
+<!-- مؤشر التمرير -->
+<div class="absolute bottom-10 animate-bounce">
+<i class="fa-solid fa-chevron-down text-aqua text-2xl opacity-70"></i>
+</div>
+</section>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- البطاقة 1 -->
-                <div class="glass-panel p-8 rounded-2xl hover:bg-white/5 transition-all duration-500 group" data-aos="fade-right" data-aos-delay="100">
-                    <div class="w-16 h-16 bg-red-500/10 rounded-full flex items-center justify-center mb-6 mx-auto border border-red-500/20 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-truck-fast text-2xl text-red-400"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-4 text-center">كابوس اللوجستيات</h3>
-                    <p class="text-gray-400 text-sm leading-loose text-justify">
-                        تكاليف نقل المياه تشمل ما لها 40% من الميزان. الاعتماد على الشبكات المركزية يعني هدراً هائلاً في شبكة الإنترنت العصبية ويتعرض عملياً لمخاطر الانقطاع.
-                    </p>
-                </div>
+<!-- الواقع الحالي (بيان المشكلة) -->
+<section class="py-24 bg-deep-blue relative z-10">
+<div class="container mx-auto px-6">
+<div class="text-center mb-20" data-aos="fade-in">
+<h2 class="text-3xl md:text-5xl font-bold text-white mb-6">لماذا يحتاج العالم <span class="font-eng text-aqua">TUROCK</span> الآن؟</h2>
+<div class="w-24 h-1 bg-gradient-to-r from-transparent via-aqua to-transparent mx-auto rounded-full"></div>
+<p class="mt-6 text-gray-400 max-w-2xl mx-auto text-lg">
+وصلت الطرق التقليدية لمعالجة المياه إلى طريق مسدود، حيث التكلفة الباهظة والأثر البيئي السلبي.
+</p>
+</div>
 
-                <!-- البطاقة 2 -->
-                <div class="glass-panel p-8 rounded-2xl hover:bg-white/5 transition-all duration-500 group" data-aos="fade-in" data-aos-delay="200">
-                    <div class="w-16 h-16 bg-orange-500/10 rounded-full flex items-center justify-center mb-6 mx-auto border border-orange-500/20 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-smog text-2xl text-orange-400"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-4 text-center">الأثرياء الصفري المفقود</h3>
-                    <p class="text-gray-400 text-sm leading-loose text-justify">
-                        محطات المعالجة والتوليد الحالية هي مصانع عملاقة للتلوث. الانبعاثات الكربونية الناشئة توفر كوب نقي في المناطق النائية المتوقعة.
-                    </p>
-                </div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- البطاقة 1 -->
+<div class="glass-panel p-8 rounded-2xl hover:bg-white/5 transition-all duration-500 group" data-aos="fade-right" data-aos-delay="100">
+<div class="w-16 h-16 bg-red-500/10 rounded-full flex items-center justify-center mb-6 mx-auto border border-red-500/20 group-hover:scale-110 transition-transform">
+<i class="fa-solid fa-truck-fast text-2xl text-red-400"></i>
+</div>
+<h3 class="text-xl font-bold text-white mb-4 text-center">كابوس اللوجستيات</h3>
+<p class="text-gray-400 text-sm leading-loose text-justify">
+تكاليف نقل المياه تشكل ما يصل إلى 40% من الميزانية التشغيلية. الاعتماد على الشبكات المركزية يعني هدراً هائلاً في النقل ويعرّض الإمدادات لمخاطر الانقطاع.
+</p>
+</div>
 
-                <!-- البطاقة 3 -->
-                <div class="glass-panel p-8 rounded-2xl hover:bg-white/5 transition-all duration-500 group" data-aos="fade-left" data-aos-delay="300">
-                    <div class="w-16 h-16 bg-gray-500/10 rounded-full flex items-center justify-center mb-6 mx-auto border border-gray-500/20 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-coins text-2xl text-gray-300"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-4 text-center">الهدر الاقتصادي</h3>
-                    <p class="text-gray-400 text-sm leading-loose text-justify">
-                        التكلفة التشغيلية (OPEX) للأنظمة التقليدية في الارتفاع. العمالة، العمالة، وقطع الغيار المعقدة تجعل استدامة المشاريع تحدياً مالياً مرهقاً.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- البطاقة 2 -->
+<div class="glass-panel p-8 rounded-2xl hover:bg-white/5 transition-all duration-500 group" data-aos="fade-in" data-aos-delay="200">
+<div class="w-16 h-16 bg-orange-500/10 rounded-full flex items-center justify-center mb-6 mx-auto border border-orange-500/20 group-hover:scale-110 transition-transform">
+<i class="fa-solid fa-smog text-2xl text-orange-400"></i>
+</div>
+<h3 class="text-xl font-bold text-white mb-4 text-center">الحياد الكربوني المفقود</h3>
+<p class="text-gray-400 text-sm leading-loose text-justify">
+محطات التحلية التقليدية هي مصانع ضخمة للانبعاثات. البصمة الكربونية لتوفير كوب ماء نقي في المناطق النائية لا تزال مرتفعة بشكل غير مستدام.
+</p>
+</div>
 
-    <!-- الحل: TUROCK (التركيز على النتائج) -->
-    <section class="py-24 bg-gradient-to-b from-deep-blue to-[#082f49] relative overflow-hidden">
-        <!-- خط زخرفي -->
-        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-aqua to-transparent opacity-30"></div>
+<!-- البطاقة 3 -->
+<div class="glass-panel p-8 rounded-2xl hover:bg-white/5 transition-all duration-500 group" data-aos="fade-left" data-aos-delay="300">
+<div class="w-16 h-16 bg-gray-500/10 rounded-full flex items-center justify-center mb-6 mx-auto border border-gray-500/20 group-hover:scale-110 transition-transform">
+<i class="fa-solid fa-coins text-2xl text-gray-300"></i>
+</div>
+<h3 class="text-xl font-bold text-white mb-4 text-center">الهدر الاقتصادي</h3>
+<p class="text-gray-400 text-sm leading-loose text-justify">
+النفقات التشغيلية (OPEX) للأنظمة التقليدية في ارتفاع مستمر. الصيانة، العمالة، وسلاسل التوريد المعقدة لقطع الغيار تجعل استدامة المشاريع تحدياً مالياً مرهقاً.
+</p>
+</div>
+</div>
+</div>
+</section>
 
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-                
-                <!-- محتوى النص -->
-                <div class="lg:w-1/2 order-2 lg:order-1" data-aos="fade-right">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-aqua/10 border border-aqua/30 text-aqua text-xs font-bold mb-4">
-                        <span class="w-2 h-2 rounded-full bg-aqua animate-pulse"></span>الحل الجذري
-                    </div>
-                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">
-                        ليس مصنعاً عملاقاً..<br>
-                        بل<span class="gradient-text">قلب نابض</span>بوزن 100كجم.
-                    </h2>
-                    <p class="text-lg text-gray-300 mb-8 leading-relaxed">
-                        يكسر قاعدة "الحجم مقابل الإنتاج". تجتذب بضغط هندسة العمليات المعقدة داخل وحدة مدمجة لا تتجاوز 100 كيلوجرام، قادرة على العمل في ظروف محددة دون الحاجة إلى بنية تحتية.
-                    </p>
-                    
-                    <ul class="space-y-6">
-                        <li class="flex items-start gap-4 p-4 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
-                            <i class="fa-solid fa-droplet text-aqua mt-1 text-xl"></i>
-                            <span class="text-gray-200">تنتج موجة فورية من الهواء والرطوبة، وبالتالي فيزيائية غير شاملة.</span>
-                        </li>
-                        <li class="flex items-start gap-4 p-4 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
-                            <i class="fa-solid fa-bolt text-aqua mt-1 text-xl"></i>
-                            <span class="text-gray-200">توليدها لفترة طويلة لتشغيل الوحدة وتصدير الفائق.</span>
-                        </li>
-                        <li class="flex items-start gap-4 p-4 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
-                            <i class="fa-solid fa-cube text-aqua mt-1 text-xl"></i>
-                            <span class="text-gray-200">صفر لوجستيات: ركّب، شغّل، وانتهى الأمر.</span>
-                        </li>
-                    </ul>
-                </div>
+<!-- الحل: TUROCK (التركيز على النتائج) -->
+<section class="py-24 bg-gradient-to-b from-deep-blue to-[#082f49] relative overflow-hidden">
+<!-- خط زخرفي -->
+<div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-aqua to-transparent opacity-30"></div>
 
-                <!-- التمثيل المرئي (تم إصلاحه وتنظيفه) -->
-                <div class="lg:w-1/2 order-1 lg:order-2 flex relative justify-center" data-aos="zoom-in">
-                    <div class="relative w-[300px] h-[300px] md:w-[450px] md:h-[450px] flex items-center justify-center">
-                        <!-- توهج النواة -->
-                        <div class="absolute inset-0 bg-aqua rounded-full opacity-20 blur-[80px] animate-slow-pulse"></div>
-                        
-                        <!-- الشكل الرئيسي -->
-                        <div class="relative z-10 w-64 h-64 md:w-80 md:h-80 glass-panel rounded-3xl flex flex-col items-center justify-center border border-aqua/40 shadow-[0_0_50px_rgba(6,182,212,0.15)] animate-float">
-                            <i class="fa-solid fa-server text-7xl md:text-8xl text-white mb-4 drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]"></i>
-                            <div class="text-3xl md:text-4xl font-eng font-bold text-white">100<span class="text-aqua text-lg align-top">كجم</span></div>
-                            <div class="text-xs text-gray-400 mt-2 font-eng tracking-widest">وحدة مدمجة</div>
-                        </div>
+<div class="container mx-auto px-6 relative z-10">
+<div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
 
-                        <!-- الأقمار الصناعية العائمة (موقع ثابت) -->
-                        <div class="absolute top-0 right-0 md:right-10 w-16 h-16 glass-panel rounded-full flex items-center justify-center border border-white/20 animate-bounce" style="animation-duration: 3s;">
-                            <i class="fa-solid fa-bolt text-white text-xl"></i>
-                        </div>
-                        <div class="absolute bottom-0 left-0 md:left-10 w-16 h-16 glass-panel rounded-full flex items-center justify-center border border-white/20 animate-bounce" style="animation-duration: 4s;">
-                            <i class="fa-solid fa-water text-aqua text-xl"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- محتوى النص -->
+<div class="lg:w-1/2 order-2 lg:order-1" data-aos="fade-right">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-aqua/10 border border-aqua/30 text-aqua text-xs font-bold mb-4">
+<span class="w-2 h-2 rounded-full bg-aqua animate-pulse"></span>الحل الجذري
+</div>
+<h2 class="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">
+ليس مصنعاً عملاقاً..<br>
+بل <span class="gradient-text">نظام متكامل</span> بوزن 100كجم.
+</h2>
+<p class="text-lg text-gray-300 mb-8 leading-relaxed">
+نكسر قاعدة "الحجم مقابل الإنتاج". يختزل اختراعنا هندسة العمليات المعقدة داخل وحدة مدمجة لا تتجاوز 100 كيلوجرام، قادرة على العمل بكفاءة في أقسى الظروف المناخية دون الحاجة إلى بنية تحتية مسبقة.
+</p>
 
-    <!-- السلاح السري: السرب المعرفي (تحذير السرية هنا فقط) -->
-    <section class="py-24 bg-black relative overflow-hidden border-t border-gray-800">
-        <!-- خلفية شبكية -->
-        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#06b6d4 1px, transparent 1px); background-size: 30px 30px;"></div>
-        
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="max-w-4xl mx-auto text-center border border-aqua/20 bg-gradient-to-b from-gray-950/90 to-black/90 p-10 md:p-14 rounded-3xl shadow-[0_0_60px_rgba(6,182,212,0.05)] backdrop-blur-xl" data-aos="fade-in">
-                <div class="inline-block px-6 py-2 rounded-full bg-red-900/10 text-red-400 text-sm font-bold tracking-wider mb-8 border border-red-500/20">
-                    <i class="fa-solid fa-lock mr-2"></i>تقنية سرية للغاية (لدعم الرؤية الوطنية)
-                </div>
-                
-                <h2 class="text-4xl md:text-6xl font-bold text-white mb-6">
-                    السرب الإدراكي
-                    <span class="block text-lg md:text-2xl font-light text-gray-500 mt-4 font-eng tracking-wider">الذكاء المعرفي الجماعي</span>
-                </h2>
+<ul class="space-y-6">
+<li class="flex items-start gap-4 p-4 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+<i class="fa-solid fa-droplet text-aqua mt-1 text-xl"></i>
+<span class="text-gray-200">استخلاص فوري للمياه من الهواء الجوي، بتقنية فيزيائية مبتكرة.</span>
+</li>
+<li class="flex items-start gap-4 p-4 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+<i class="fa-solid fa-bolt text-aqua mt-1 text-xl"></i>
+<span class="text-gray-200">توليد ذاتي للطاقة لتشغيل الوحدة وتصدير الفائض للشبكة.</span>
+</li>
+<li class="flex items-start gap-4 p-4 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+<i class="fa-solid fa-cube text-aqua mt-1 text-xl"></i>
+<span class="text-gray-200">صفر تعقيدات لوجستية: ركّب، شغّل، وانتهى الأمر (Plug & Play).</span>
+</li>
+</ul>
+</div>
 
-                <p class="text-lg text-gray-300 leading-loose mb-12 text-justify md:text-center max-w-3xl mx-auto">
-                    قوة<span class="font-eng">TUROCK</span>لا تضع إلا في الوحدة، بل في الإدراك على "الإدراك الجماعي".
-                    نحن لا نقدم أجهزة لفرض، بل نبني<span class="text-white font-bold border-b border-aqua/50 pb-1">بشكل شبكي حياً</span>.
-                    عندما يجتمع المجتمع الوحدات، ما زال بشكل عام مجتمعاً تقنياً يتواصل، يحلل، ويتعاون ويشكل أسي لا خطي.
-                    <br><br>
-                    <span class="text-aqua/80 border-r-2 border-aqua pr-3 mr-2">هذه لم تعد تعرض لأي جهة، تكنولوجيا أخرى حقيقية جوهرة ذات قيمة سوقية مستقبلية.</span>
-                </p>
+<!-- التمثيل المرئي -->
+<div class="lg:w-1/2 order-1 lg:order-2 flex relative justify-center" data-aos="zoom-in">
+<div class="relative w-[300px] h-[300px] md:w-[450px] md:h-[450px] flex items-center justify-center">
+<!-- توهج النواة -->
+<div class="absolute inset-0 bg-aqua rounded-full opacity-20 blur-[80px] animate-slow-pulse"></div>
 
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 text-center border-t border-gray-800 pt-8">
-                    <div class="flex flex-col items-center gap-3 group">
-                        <i class="fa-solid fa-circle-nodes text-3xl text-gray-600 group-hover:text-aqua transition-colors"></i>
-                        <div class="text-sm text-gray-400">تزامن لحظي</div>
-                    </div>
-                    <div class="flex flex-col items-center gap-3 group">
-                        <i class="fa-solid fa-brain text-3xl text-gray-600 group-hover:text-aqua transition-colors"></i>
-                        <div class="text-sm text-gray-400">ذكاء موزع</div>
-                    </div>
-                    <div class="flex flex-col items-center gap-3 group">
-                        <i class="fa-solid fa-arrow-trend-up text-3xl text-gray-600 group-hover:text-aqua transition-colors"></i>
-                        <div class="text-sm text-gray-400">كفاءة مضاعفة</div>
-                    </div>
-                    <div class="flex flex-col items-center gap-3 group">
-                        <i class="fa-solid fa-shield-halved text-3xl text-gray-600 group-hover:text-aqua transition-colors"></i>
-                        <div class="text-sm text-gray-400">أمان سيبراني</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- الشكل الرئيسي -->
+<div class="relative z-10 w-64 h-64 md:w-80 md:h-80 glass-panel rounded-3xl flex flex-col items-center justify-center border border-aqua/40 shadow-[0_0_50px_rgba(6,182,212,0.15)] animate-float">
+<i class="fa-solid fa-server text-7xl md:text-8xl text-white mb-4 drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]"></i>
+<div class="text-3xl md:text-4xl font-eng font-bold text-white">100<span class="text-aqua text-lg align-top">KG</span></div>
+<div class="text-xs text-gray-400 mt-2 font-eng tracking-widest">COMPACT UNIT</div>
+</div>
 
-    <!-- التحقق العلمي -->
-    <section class="py-24 bg-deep-blue">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16" data-aos="fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">النتائج المثبتة للعناصر</h2>
-                <p class="text-gray-400 text-lg">نتائج البحث العملية للعناصر الفيزيائية (دون الخوض في تفاصيل المواد)</p>
-            </div>
+<!-- الأقمار الصناعية العائمة -->
+<div class="absolute top-0 right-0 md:right-10 w-16 h-16 glass-panel rounded-full flex items-center justify-center border border-white/20 animate-bounce" style="animation-duration: 3s;">
+<i class="fa-solid fa-bolt text-white text-xl"></i>
+</div>
+<div class="absolute bottom-0 left-0 md:left-10 w-16 h-16 glass-panel rounded-full flex items-center justify-center border border-white/20 animate-bounce" style="animation-duration: 4s;">
+<i class="fa-solid fa-water text-aqua text-xl"></i>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-            <div class="max-w-4xl mx-auto space-y-12">
-                <!-- النتيجة 1 -->
-                <div class="bg-white/5 p-6 rounded-2xl border border-white/5" data-aos="fade-in">
-                    <div class="flex justify-between items-end mb-4">
-                        <div>
-                            <h3 class="text-xl font-bold text-white flex items-center gap-2">
-                                <i class="fa-solid fa-cloud-rain text-aqua"></i>سعة التكثيف المائي
-                            </h3>
-                            <p class="text-gray-400 text-xs mt-1">المقارنة بالتقنيات التقليدية في زروات الرطوبة المنخفضة</p>
-                        </div>
-                        <span class="text-2xl font-bold text-aqua font-eng">94%</span>
-                    </div>
-                    <div class="w-full bg-gray-800 rounded-full h-4 overflow-hidden">
-                        <div class="bg-gradient-to-r from-blue-600 to-aqua h-full rounded-full" style="width: 94%"></div>
-                    </div>
-                </div>
+<!-- السلاح السري: السرب المعرفي -->
+<section class="py-24 bg-black relative overflow-hidden border-t border-gray-800">
+<!-- خلفية شبكية -->
+<div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#06b6d4 1px, transparent 1px); background-size: 30px 30px;"></div>
 
-                <!-- النتيجة 2 -->
-                <div class="bg-white/5 p-6 rounded-2xl border border-white/5" data-aos="fade-in" data-aos-delay="100">
-                    <div class="flex justify-between items-end mb-4">
-                        <div>
-                            <h3 class="text-xl font-bold text-white flex items-center gap-2">
-                                <i class="fa-solid fa-plug-circle-bolt text-green-400"></i>توفير الطاقة للكيلوواط
-                            </h3>
-                            <p class="text-gray-400 text-xs mt-1">معدل استهلاك الطاقة الذاتية مقابل الإنتاج</p>
-                        </div>
-                        <span class="text-2xl font-bold text-green-400 font-eng">12%</span>
-                    </div>
-                    <div class="w-full bg-gray-800 rounded-full h-4 overflow-hidden">
-                        <div class="bg-gradient-to-r from-green-600 to-green-400 h-full rounded-full" style="width: 12%"></div>
-                    </div>
-                </div>
+<div class="container mx-auto px-6 relative z-10">
+<div class="max-w-4xl mx-auto text-center border border-aqua/20 bg-gradient-to-b from-gray-950/90 to-black/90 p-10 md:p-14 rounded-3xl shadow-[0_0_60px_rgba(6,182,212,0.05)] backdrop-blur-xl" data-aos="fade-in">
+<div class="inline-block px-6 py-2 rounded-full bg-red-900/10 text-red-400 text-sm font-bold tracking-wider mb-8 border border-red-500/20">
+<i class="fa-solid fa-lock mr-2"></i>تقنية سرية للغاية (لدعم الرؤية الوطنية)
+</div>
 
-                <!-- النتيجة 3 -->
-                <div class="bg-white/5 p-6 rounded-2xl border border-white/5" data-aos="fade-in" data-aos-delay="200">
-                    <div class="flex justify-between items-end mb-4">
-                        <div>
-                            <h3 class="text-xl font-bold text-white flex items-center gap-2">
-                                <i class="fa-solid fa-recycle text-purple-400"></i>الاستدامة التشغيلية
-                            </h3>
-                            <p class="text-gray-400 text-xs mt-1">العمر الافتراضي للعناصر العضوية دون صيانة</p>
-                        </div>
-                        <span class="text-2xl font-bold text-purple-400 font-eng">88%</span>
-                    </div>
-                    <div class="w-full bg-gray-800 rounded-full h-4 overflow-hidden">
-                        <div class="bg-gradient-to-r from-purple-600 to-purple-400 h-full rounded-full" style="width: 88%"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<h2 class="text-4xl md:text-6xl font-bold text-white mb-6">
+السرب الإدراكي
+<span class="block text-lg md:text-2xl font-light text-gray-500 mt-4 font-eng tracking-wider">Cognitive Swarm Intelligence</span>
+</h2>
 
-    <!-- شبكة التأثير الاستراتيجي -->
-    <section class="py-24 bg-ocean relative">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-16" data-aos="fade-in">الثراء الاقتصادي والجيوسياسي</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- المربع 1 -->
-                <div class="glass-panel p-8 rounded-xl text-center group hover:-translate-y-2 transition-transform duration-300">
-                    <i class="fa-solid fa-globe text-4xl text-aqua mb-6 group-hover:rotate-12 transition-transform"></i>
-                    <h3 class="text-white font-bold mb-2">الأمن المائي</h3>
-                    <p class="text-gray-400 text-xs leading-relaxed">تحقيق الاكتفاء الذاتي في المناطق النائية دون الحاجة لخطوط الأنابيب.</p>
-                </div>
-                
-                <!-- المربع 2 -->
-                <div class="glass-panel p-8 rounded-xl text-center group hover:-translate-y-2 transition-transform duration-300">
-                    <i class="fa-solid fa-chart-line text-4xl text-green-400 mb-6 group-hover:rotate-12 transition-transform"></i>
-                    <h3 class="text-white font-bold mb-2">الاقتصاد الأخضر</h3>
-                    <p class="text-gray-400 text-xs leading-relaxed">خلق نماذج جديدة للكربون وأخرى بيئية.</p>
-                </div>
+<p class="text-lg text-gray-300 leading-loose mb-12 text-justify md:text-center max-w-3xl mx-auto">
+قوة <span class="font-eng">TUROCK</span> لا تكمن فقط في الوحدة الفردية، بل في "الذكاء الجمعي".
+نحن لا نبيع أجهزة منفصلة، بل نبني <span class="text-white font-bold border-b border-aqua/50 pb-1">شبكة عصبية حية</span>.
+عندما تجتمع عدة وحدات، فإنها تتواصل، تحلل البيانات، وتتعاون لرفع الكفاءة بشكل أسي لا خطي.
+<br><br>
+<span class="text-aqua/80 border-r-2 border-aqua pr-3 mr-2">هذه ليست مجرد تقنية لإنتاج المياه، بل أصل استراتيجي ذو سيادة مستقبلية.</span>
+</p>
 
-                <!-- المربع 3 -->
-                <div class="glass-panel p-8 rounded-xl text-center group hover:-translate-y-2 transition-transform duration-300">
-                    <i class="fa-solid fa-microchip text-4xl text-blue-400 mb-6 group-hover:rotate-12 transition-transform"></i>
-                    <h3 class="text-white font-bold mb-2">توطين التقنية</h3>
-                    <p class="text-gray-400 text-xs leading-relaxed">نقل المعرفة وأسيس صناعة تقنية متطورة محليا.</p>
-                </div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 text-center border-t border-gray-800 pt-8">
+<div class="flex flex-col items-center gap-3 group">
+<i class="fa-solid fa-circle-nodes text-3xl text-gray-600 group-hover:text-aqua transition-colors"></i>
+<div class="text-sm text-gray-400">تزامن لحظي</div>
+</div>
+<div class="flex flex-col items-center gap-3 group">
+<i class="fa-solid fa-brain text-3xl text-gray-600 group-hover:text-aqua transition-colors"></i>
+<div class="text-sm text-gray-400">ذكاء موزع</div>
+</div>
+<div class="flex flex-col items-center gap-3 group">
+<i class="fa-solid fa-arrow-trend-up text-3xl text-gray-600 group-hover:text-aqua transition-colors"></i>
+<div class="text-sm text-gray-400">كفاءة مضاعفة</div>
+</div>
+<div class="flex flex-col items-center gap-3 group">
+<i class="fa-solid fa-shield-halved text-3xl text-gray-600 group-hover:text-aqua transition-colors"></i>
+<div class="text-sm text-gray-400">أمان سيبراني</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-                <!-- المربع 4 -->
-                <div class="glass-panel p-8 rounded-xl text-center group hover:-translate-y-2 transition-transform duration-300">
-                    <i class="fa-solid fa-heart-pulse text-4xl text-cyan-200 mb-6 group-hover:rotate-12 transition-transform"></i>
-                    <h3 class="text-white font-bold mb-2">جودة الحياة</h3>
-                    <p class="text-gray-400 text-xs leading-relaxed">مياه نقية ونظيفة تهدف إلى توفير الحماية للأضرار.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- التحقق العلمي -->
+<section class="py-24 bg-deep-blue">
+<div class="container mx-auto px-6">
+<div class="text-center mb-16" data-aos="fade-in">
+<h2 class="text-3xl md:text-4xl font-bold text-white mb-4">النتائج المثبتة للعناصر</h2>
+<p class="text-gray-400 text-lg">نتائج البحث والتطوير العملية (دون الخوض في تفاصيل المواد المحمية)</p>
+</div>
 
-    <!-- قسم براءات الاختراع الرسمي (في النهاية) -->
-    <section class="py-16 bg-deep-blue border-t border-gray-800 legal-section-bg relative">
-        <div class="container mx-auto px-6">
-            <div class="max-w-3xl mx-auto border border-aqua/30 bg-[#050914] p-1 rounded-lg" data-aos="zoom-in">
-                <div class="border border-aqua/10 rounded-lg p-8 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-right">
-                    
-                    <!-- الرمز والعنوان -->
-                    <div class="flex-col items-center md:items-start gap-3">
-                        <div class="flex items-center justify-center md:justify-start gap-3">
-                            <i class="fa-solid fa-file-contract text-3xl text-aqua"></i>
-                            <h3 class="text-white font-bold text-lg">طلب براءة اختراع غير مسجل</h3>
-                        </div>
-                        <p class="text-gray-400 text-xs max-w-xs mt-2">
-                            تم إرسال الطلب لحفظ الحقوق لدى الهيئة السعودية للملكية الفكرية (SAIP)
-                        </p>
-                    </div>
+<div class="max-w-4xl mx-auto space-y-12">
+<!-- النتيجة 1 -->
+<div class="bg-white/5 p-6 rounded-2xl border border-white/5" data-aos="fade-in">
+<div class="flex justify-between items-end mb-4">
+<div>
+<h3 class="text-xl font-bold text-white flex items-center gap-2">
+<i class="fa-solid fa-cloud-rain text-aqua"></i>سعة التكثيف المائي
+</h3>
+<p class="text-gray-400 text-xs mt-1">مقارنة بالتقنيات التقليدية في ظروف الرطوبة المنخفضة</p>
+</div>
+<span class="text-2xl font-bold text-aqua font-eng">94%</span>
+</div>
+<div class="w-full bg-gray-800 rounded-full h-4 overflow-hidden">
+<div class="bg-gradient-to-r from-blue-600 to-aqua h-full rounded-full" style="width: 94%"></div>
+</div>
+</div>
 
-                    <!-- الرقم -->
-                    <div class="bg-deep-blue px-8 py-4 rounded-lg border border-gray-700 shadow-inner flex flex-col items-center">
-                        <span class="text-[10px] text-gray-500 uppercase tracking-wider font-eng mb-1">رقم طلب براءة الاختراع</span>
-                        <span class="text-3xl font-black text-white font-eng tracking-wider text-shadow-sm">55899647</span>
-                    </div>
+<!-- النتيجة 2 -->
+<div class="bg-white/5 p-6 rounded-2xl border border-white/5" data-aos="fade-in" data-aos-delay="100">
+<div class="flex justify-between items-end mb-4">
+<div>
+<h3 class="text-xl font-bold text-white flex items-center gap-2">
+<i class="fa-solid fa-plug-circle-bolt text-green-400"></i>كفاءة الطاقة (kW)
+</h3>
+<p class="text-gray-400 text-xs mt-1">معدل استهلاك الطاقة الذاتية مقابل الإنتاج الكلي</p>
+</div>
+<span class="text-2xl font-bold text-green-400 font-eng">12%</span>
+</div>
+<div class="w-full bg-gray-800 rounded-full h-4 overflow-hidden">
+<div class="bg-gradient-to-r from-green-600 to-green-400 h-full rounded-full" style="width: 12%"></div>
+</div>
+</div>
 
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- النتيجة 3 -->
+<div class="bg-white/5 p-6 rounded-2xl border border-white/5" data-aos="fade-in" data-aos-delay="200">
+<div class="flex justify-between items-end mb-4">
+<div>
+<h3 class="text-xl font-bold text-white flex items-center gap-2">
+<i class="fa-solid fa-recycle text-purple-400"></i>الاستدامة التشغيلية
+</h3>
+<p class="text-gray-400 text-xs mt-1">العمر الافتراضي للمكونات الأساسية دون صيانة دورية</p>
+</div>
+<span class="text-2xl font-bold text-purple-400 font-eng">88%</span>
+</div>
+<div class="w-full bg-gray-800 rounded-full h-4 overflow-hidden">
+<div class="bg-gradient-to-r from-purple-600 to-purple-400 h-full rounded-full" style="width: 88%"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-    <!-- تذييل -->
-    <footer class="bg-[#02040a] border-t border-gray-900 py-12 relative z-20">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-10">
-                
-                <!-- الجانب الأيسر: رؤية 2030 -->
-                <div class="text-center md:text-right">
-                    <div class="flex justify-center md:justify-start items-center gap-3 mb-2">
-                        <!-- شعار رؤية 2030 -->
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Saudi_Vision_2030_logo.svg/1200px-Saudi_Vision_2030_logo.svg.png" alt="رؤية 2030" class="h-10 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
-                    </div>
-                    <p class="text-gray-600 text-xs">تتوافق مع أهداف الاستدامة الوطنية</p>
-                </div>
+<!-- شبكة التأثير الاستراتيجي -->
+<section class="py-24 bg-ocean relative">
+<div class="container mx-auto px-6">
+<h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-16" data-aos="fade-in">الأثر الاقتصادي والجيوسياسي</h2>
 
-                <!-- مركز: حقوق النشر والمخترع ولينكدإن -->
-                <div class="text-center">
-                    <p class="text-gray-500 text-xs font-eng tracking-wider mb-3">
-                        <!-- تم التعديل -->
-                        &copy; 2025 TUROCK TECHNOLOGY. ALL RIGHTS RESERVED.
-                    </p>
-                    <p class="text-white text-sm font-eng tracking-wide mb-4">
-                        <!-- تم التعديل -->
-                        INVENTOR: <span class="text-aqua font-bold">ALWALEED ALGHAMDI</span>
-                    </p>
-                    <!-- أيقونة LinkedIn مع الرابط -->
-                    <a href="https://www.linkedin.com/in/الوليد-الغامدي-9877a4375" target="_blank" rel="noopener noreferrer" aria-label="تواصل عبر LinkedIn" class="text-gray-500 hover:text-aqua transition-colors text-3xl inline-block">
-                        <i class="fa-brands fa-linkedin"></i>
-                    </a>
-                </div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- المربع 1 -->
+<div class="glass-panel p-8 rounded-xl text-center group hover:-translate-y-2 transition-transform duration-300">
+<i class="fa-solid fa-globe text-4xl text-aqua mb-6 group-hover:rotate-12 transition-transform"></i>
+<h3 class="text-white font-bold mb-2">الأمن المائي</h3>
+<p class="text-gray-400 text-xs leading-relaxed">تحقيق الاكتفاء الذاتي في المناطق النائية دون الحاجة لمد خطوط أنابيب مكلفة.</p>
+</div>
 
-                <!-- الجانب الأيمن: فاصل -->
-                <div class="w-1/3 hidden md:block"></div>
-            </div>
-        </div>
-    </footer>
+<!-- المربع 2 -->
+<div class="glass-panel p-8 rounded-xl text-center group hover:-translate-y-2 transition-transform duration-300">
+<i class="fa-solid fa-chart-line text-4xl text-green-400 mb-6 group-hover:rotate-12 transition-transform"></i>
+<h3 class="text-white font-bold mb-2">الاقتصاد الأخضر</h3>
+<p class="text-gray-400 text-xs leading-relaxed">خلق نماذج أعمال جديدة تدعم تصفير الانبعاثات الكربونية.</p>
+</div>
 
-    <!-- البرامج النصية -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        // تهيئة الرسوم المتحركة عند التمرير
-        AOS.init({
-            once: true, 
-            offset: 80, 
-            duration: 1000, 
-            easing: 'ease-out-cubic',
-        });
-    </script>
+<!-- المربع 3 -->
+<div class="glass-panel p-8 rounded-xl text-center group hover:-translate-y-2 transition-transform duration-300">
+<i class="fa-solid fa-microchip text-4xl text-blue-400 mb-6 group-hover:rotate-12 transition-transform"></i>
+<h3 class="text-white font-bold mb-2">توطين التقنية</h3>
+<p class="text-gray-400 text-xs leading-relaxed">نقل المعرفة وتأسيس صناعة تقنية متطورة محلياً بأيدٍ وطنية.</p>
+</div>
+
+<!-- المربع 4 -->
+<div class="glass-panel p-8 rounded-xl text-center group hover:-translate-y-2 transition-transform duration-300">
+<i class="fa-solid fa-heart-pulse text-4xl text-cyan-200 mb-6 group-hover:rotate-12 transition-transform"></i>
+<h3 class="text-white font-bold mb-2">جودة الحياة</h3>
+<p class="text-gray-400 text-xs leading-relaxed">مياه نقية وطاقة نظيفة تساهم في تقليل المخاطر الصحية والبيئية.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- قسم براءات الاختراع الرسمي (في النهاية) -->
+<section class="py-16 bg-deep-blue border-t border-gray-800 legal-section-bg relative">
+<div class="container mx-auto px-6">
+<div class="max-w-3xl mx-auto border border-aqua/30 bg-[#050914] p-1 rounded-lg" data-aos="zoom-in">
+<div class="border border-aqua/10 rounded-lg p-8 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-right">
+
+<!-- الرمز والعنوان -->
+<div class="flex-col items-center md:items-start gap-3">
+<div class="flex items-center justify-center md:justify-start gap-3">
+<i class="fa-solid fa-file-contract text-3xl text-aqua"></i>
+<h3 class="text-white font-bold text-lg">طلب براءة اختراع مسجل</h3>
+</div>
+<p class="text-gray-400 text-xs max-w-xs mt-2">
+تم إيداع الطلب لحفظ الحقوق لدى الهيئة السعودية للملكية الفكرية (SAIP)
+</p>
+</div>
+
+<!-- الرقم -->
+<div class="bg-deep-blue px-8 py-4 rounded-lg border border-gray-700 shadow-inner flex flex-col items-center">
+<span class="text-[10px] text-gray-500 uppercase tracking-wider font-eng mb-1">Patent Application No.</span>
+<span class="text-3xl font-black text-white font-eng tracking-wider text-shadow-sm">55899647</span>
+</div>
+
+</div>
+</div>
+</div>
+</section>
+
+<!-- تذييل -->
+<footer class="bg-[#02040a] border-t border-gray-900 py-12 relative z-20">
+<div class="container mx-auto px-6">
+<div class="flex flex-col md:flex-row justify-between items-center gap-10">
+
+<!-- الجانب الأيمن: رؤية 2030 -->
+<div class="text-center md:text-right">
+<div class="flex justify-center md:justify-start items-center gap-3 mb-2">
+<!-- شعار رؤية 2030 -->
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Saudi_Vision_2030_logo.svg/1200px-Saudi_Vision_2030_logo.svg.png" alt="رؤية 2030" class="h-10 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+</div>
+<p class="text-gray-600 text-xs">تتوافق مع أهداف الاستدامة الوطنية</p>
+</div>
+
+<!-- مركز: حقوق النشر والمخترع ولينكدإن -->
+<div class="text-center">
+<p class="text-gray-500 text-xs font-eng tracking-wider mb-3">
+© 2025 TUROCK TECHNOLOGY. ALL RIGHTS RESERVED.
+</p>
+<p class="text-white text-sm font-eng tracking-wide mb-4">
+INVENTOR: <span class="text-aqua font-bold">ALWALEED ALGHAMDI</span>
+</p>
+<!-- أيقونة LinkedIn مع الرابط -->
+<a href="https://www.linkedin.com/in/الوليد-الغامدي-9877a4375" target="_blank" rel="noopener noreferrer" aria-label="تواصل عبر LinkedIn" class="text-gray-500 hover:text-aqua transition-colors text-3xl inline-block">
+<i class="fa-brands fa-linkedin"></i>
+</a>
+</div>
+
+<!-- الجانب الأيسر: فاصل -->
+<div class="w-1/3 hidden md:block"></div>
+</div>
+</div>
+</footer>
+
+<!-- البرامج النصية -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+// تهيئة الرسوم المتحركة عند التمرير
+AOS.init({
+once: true,
+offset: 80,
+duration: 1000,
+easing: 'ease-out-cubic',
+});
+</script>
 </body>
 </html>
